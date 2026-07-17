@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173a63">
+  <title>Mind map inspiration · The American Promise</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="brand">
+      <span class="eyebrow">THE AMERICAN PROMISE · MIND MAP</span>
+      <h1>Need some inspiration?</h1>
+      <p class="context">Look closely at the visual impulse. Which aspects of the USA can you identify?</p>
+    </header>
+
+    <section class="reveal-panel">
+      <button class="reveal-button" id="reveal" type="button" aria-expanded="false" aria-controls="inspiration">
+        <span>Give me some inspiration</span><span aria-hidden="true">＋</span>
+      </button>
+      <div class="inspiration hidden" id="inspiration">
+        <div class="image-placeholder" role="img" aria-label="The visual impulse will be added here">
+          <span><strong>Visual impulse</strong><br>The selected image will appear here.</span>
+        </div>
+        <p class="prompt">What do the individual images suggest about American history, politics, society and culture, values and myths, or current issues?</p>
+      </div>
+    </section>
+    <a class="back" href="../../">← Learning Support</a>
+  </main>
+  <script>
+    const button = document.querySelector('#reveal');
+    const panel = document.querySelector('#inspiration');
+    button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!open));
+      button.lastElementChild.textContent = open ? '＋' : '−';
+      panel.classList.toggle('hidden', open);
+      if (!open) panel.focus({preventScroll:true});
+    });
+  </script>
+</body>
+</html>
