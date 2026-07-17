@@ -1,0 +1,26 @@
+:root {
+  --navy:#173a63; --blue:#315f8e; --red:#a7353d; --paper:#f8fafc;
+  --ink:#172334; --muted:#5e6a78; --line:#d8e0e8; --white:#fff;
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:
+radial-gradient(circle at 20% 10%,rgba(49,95,142,.10),transparent 24rem),
+linear-gradient(145deg,#fff,var(--paper))}
+.shell{width:min(44rem,calc(100% - 2rem));margin:0 auto;padding:3rem 0 5rem}
+.brand{border-top:.55rem solid var(--navy);padding:1.2rem 0 1.5rem}
+.eyebrow,.label{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--red)}
+h1{font-family:Georgia,serif;font-size:clamp(2rem,8vw,3.7rem);line-height:1.02;margin:.5rem 0 1rem;color:var(--navy)}
+p{line-height:1.6;color:var(--muted)}
+.card,.reveal-panel{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:1rem;padding:1.2rem;box-shadow:0 .7rem 2rem rgba(23,58,99,.08)}
+.help-link,.reveal-button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;border:0;border-radius:.75rem;padding:1rem;text-align:left;text-decoration:none;background:var(--navy);color:var(--white);cursor:pointer;font:inherit}
+.help-link small{display:block;margin-top:.35rem;color:#dce7f1}
+.reveal-button{font-weight:750;font-size:1.05rem}
+.reveal-button:hover,.reveal-button:focus-visible,.help-link:hover,.help-link:focus-visible{background:var(--blue);outline:3px solid rgba(49,95,142,.22);outline-offset:3px}
+.context{margin:0 0 1.4rem;padding:.85rem 1rem;border-left:.3rem solid var(--red);background:#fff}
+.hidden{display:none}
+.inspiration{margin-top:1rem}
+.inspiration img{display:block;width:100%;height:auto;border-radius:.8rem;border:1px solid var(--line)}
+.image-placeholder{display:grid;place-items:center;min-height:17rem;padding:2rem;border:2px dashed #aab8c7;border-radius:.8rem;background:#f3f6f9;text-align:center;color:var(--muted)}
+.prompt{margin:.9rem 0 0;color:var(--ink);font-weight:650}
+.back{display:inline-block;margin-top:1.5rem;color:var(--navy);font-weight:700}
+@media (max-width:30rem){.shell{padding-top:1.5rem}.card,.reveal-panel{padding:1rem}}
