@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173a63">
+  <title>From device to overall argument · The American Promise</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body class="support-page american-promise">
+  <main class="shell unit-shell">
+    <header class="unit-header">
+      <img class="unit-banner" src="../../assets/american-promise-support-header.svg" alt="Support — The American Promise — Dream. Reality. Responsibility.">
+    </header>
+
+    <h1 class="support-title">Analysis support: From device to overall argument</h1>
+
+    <div class="accordion-stack">
+      <section class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="guidance">
+          <span>General guidance</span><span aria-hidden="true">＋</span>
+        </button>
+        <div class="accordion-content hidden" id="guidance">
+          <div class="table-wrap">
+            <table class="support-table">
+              <thead><tr><th>Question</th><th>Helpful sentence starters</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>What device is used?</td>
+                  <td><em>The speaker uses … / Trump employs … / The phrase “…” is an example of … / The passage contains …</em></td>
+                </tr>
+                <tr>
+                  <td>What effect does it have on the audience?</td>
+                  <td><em>This creates a sense of … / The device creates the impression that … / For the audience, this … / This may evoke … / The metaphor / repetition / allusion draws attention to … / By doing so, the speaker …</em></td>
+                </tr>
+                <tr>
+                  <td>How does it contribute to the overall argument?</td>
+                  <td><em>In doing so, Trump … / This supports his claim that … / Within the overall argument, the device … / Consequently, it contributes to … / Overall, this reinforces … / Ultimately, it helps present …</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <aside class="keep-in-mind">
+            <strong>Keep in mind:</strong>
+            <ul>
+              <li>The <strong>effect</strong> describes the audience’s immediate impression or emotional response.</li>
+              <li>The <strong>contribution to the overall argument</strong> explains how this effect helps Trump develop his wider message and line of argument.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="example">
+          <span>Example</span><span aria-hidden="true">＋</span>
+        </button>
+        <div class="accordion-content hidden" id="example">
+          <p class="example-intro">At another point of the speech, Trump claims:</p>
+          <blockquote class="example-quote">“America is dead.”</blockquote>
+
+          <div class="table-wrap">
+            <table class="support-table">
+              <thead><tr><th>Analytical step</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>Stylistic device</td>
+                  <td>Trump uses a <strong>personification</strong> by presenting America as a living being that can die. The statement can also be understood as a metaphor for extreme national decline.</td>
+                </tr>
+                <tr>
+                  <td>Effect on the audience</td>
+                  <td>The drastic image shocks the audience and creates a strong sense of crisis, fear and urgency.</td>
+                </tr>
+                <tr>
+                  <td>Contribution to the overall argument</td>
+                  <td>In doing so, Trump reinforces his portrayal of the country as being in a state of severe decline. This supports his wider argument that fundamental change is necessary and prepares the audience to accept his leadership and promise of national renewal.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="connected-example">
+            <h2>Connected analytical paragraph</h2>
+            <p>At another point, Trump claims that “America is dead”. He personifies the nation by presenting it as a living being that can die. The drastic image shocks the audience and creates a strong sense of crisis, fear and urgency. In doing so, Trump reinforces his portrayal of the country as being in a state of severe decline. This supports his wider argument that fundamental change is necessary and prepares the audience to accept his leadership and promise of national renewal.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.reveal-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const open = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!open));
+        button.lastElementChild.textContent = open ? '＋' : '−';
+        document.getElementById(button.getAttribute('aria-controls')).classList.toggle('hidden', open);
+      });
+    });
+  </script>
+</body>
+</html>
