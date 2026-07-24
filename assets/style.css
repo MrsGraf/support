@@ -28,9 +28,11 @@ p{line-height:1.6;color:var(--muted)}
 .back{display:inline-block;margin-top:1.5rem;color:var(--navy);font-weight:700}
 
 .support-title{
-  display:inline-block;
+  display:block;
+  width:fit-content;
   max-width:100%;
-  margin:.1rem 0 1rem;
+  margin:.1rem auto 1rem;
+  text-align:center;
   padding:.38rem .68rem;
   border:1.5px solid var(--red);
   border-radius:.5rem;
