@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173a63">
+  <title>Reconstructing the line of argument · The American Promise</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body class="support-page american-promise">
+  <main class="shell unit-shell">
+    <header class="unit-header">
+      <img class="unit-banner" src="../../assets/american-promise-support-header.svg" alt="Support — The American Promise — Dream. Reality. Responsibility.">
+    </header>
+
+    <h1 class="support-title">Analysis support: Reconstructing the line of argument</h1>
+
+    <div class="accordion-stack">
+      <section class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="guidance">
+          <span>General guidance</span><span aria-hidden="true">＋</span>
+        </button>
+        <div class="accordion-content hidden" id="guidance">
+          <div class="table-wrap">
+            <table class="support-table">
+              <thead><tr><th>Question</th><th>Helpful sentence starters</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>What is the main idea of the section?</td>
+                  <td><em>In this section, Trump argues that … / He claims that … / Trump presents … as … / The passage focuses on … / The central idea is that …</em></td>
+                </tr>
+                <tr>
+                  <td>Which American concept, ideal or historical narrative does Trump draw on?</td>
+                  <td><em>Trump draws on the concept of … / The passage invokes the American ideal of … / This echoes the historical narrative of … / The reference to … connects the passage to …</em></td>
+                </tr>
+                <tr>
+                  <td>How does this section move the argument forward?</td>
+                  <td><em>By drawing on …, Trump … / The speech opens with … / Trump first … before moving on to … / Having established …, he then … / The argument shifts from … to … / This prepares the audience for … / The section develops the argument by … / The section concludes by …</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <aside class="keep-in-mind">
+            <strong>Keep in mind:</strong>
+            <ul>
+              <li>The <strong>main idea</strong> summarises what Trump says in a section.</li>
+              <li>The <strong>concept, ideal or historical narrative</strong> identifies the familiar American idea he draws on.</li>
+              <li>The <strong>movement of the argument</strong> explains why this section appears at this point and how it prepares, develops or completes his argument.</li>
+            </ul>
+          </aside>
+
+          <h2>Useful verbs for describing the movement of an argument</h2>
+          <div class="table-wrap">
+            <table class="support-table function-table">
+              <thead><tr><th>Function</th><th>Useful verbs and phrases</th></tr></thead>
+              <tbody>
+                <tr><td>Beginning the argument</td><td><em>opens with · introduces · announces · establishes</em></td></tr>
+                <tr><td>Describing a problem</td><td><em>diagnoses · identifies · portrays · warns of</em></td></tr>
+                <tr><td>Creating a contrast</td><td><em>contrasts · distinguishes · presents an opposition between</em></td></tr>
+                <tr><td>Assigning responsibility</td><td><em>blames · accuses · holds … responsible · attributes … to</em></td></tr>
+                <tr><td>Justifying action or leadership</td><td><em>legitimises · justifies · positions himself as · presents … as necessary</em></td></tr>
+                <tr><td>Referring to shared ideas</td><td><em>invokes · draws on · appeals to · associates his message with</em></td></tr>
+                <tr><td>Moving towards a solution</td><td><em>shifts from … to … · promises · presents a turning point · proposes</em></td></tr>
+                <tr><td>Ending the argument</td><td><em>concludes with · culminates in · reinforces · leaves the audience with</em></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="example">
+          <span>Example</span><span aria-hidden="true">＋</span>
+        </button>
+        <div class="accordion-content hidden" id="example">
+          <p class="example-intro">Hypothetical example — not taken from the excerpt:</p>
+          <blockquote class="example-quote">“America has always been a nation of pioneers.”</blockquote>
+
+          <div class="table-wrap">
+            <table class="support-table">
+              <thead><tr><th>Analytical step</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>Main idea</td>
+                  <td>Trump presents Americans as courageous people who have repeatedly explored new territory and overcome challenges.</td>
+                </tr>
+                <tr>
+                  <td>American concept, ideal or historical narrative</td>
+                  <td>He draws on the <strong>frontier myth</strong> and the historical narrative of <strong>westward expansion</strong>, which are associated with opportunity, courage, self-reliance and progress.</td>
+                </tr>
+                <tr>
+                  <td>Movement of the argument</td>
+                  <td>By invoking the frontier myth, Trump connects his political programme to a familiar story of American achievement. Having presented present-day challenges, he uses this historical narrative to suggest that Americans can overcome them in the same way their predecessors supposedly conquered earlier frontiers. The section therefore moves the argument from a description of difficulties towards confidence in national renewal.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="connected-example">
+            <h2>As a connected analytical paragraph</h2>
+            <p>By describing America as “a nation of pioneers”, Trump presents Americans as courageous people who have repeatedly explored new territory and overcome challenges. He draws on the frontier myth and the historical narrative of westward expansion, which are traditionally associated with opportunity, self-reliance and progress. By invoking this familiar national narrative, Trump connects his political programme to a story of past American achievement. Having presented present-day challenges, he suggests that the country can overcome them in the same way earlier generations supposedly conquered new frontiers. The passage therefore moves the argument from a diagnosis of current difficulties towards confidence in national renewal.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.reveal-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const open = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!open));
+        button.lastElementChild.textContent = open ? '＋' : '−';
+        document.getElementById(button.getAttribute('aria-controls')).classList.toggle('hidden', open);
+      });
+    });
+  </script>
+</body>
+</html>
