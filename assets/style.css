@@ -84,3 +84,42 @@ p{line-height:1.6;color:var(--muted)}
   .support-table td+td{border-top:1px solid #c7cdd5}
   .support-table td:first-child{text-align:left;background:#e8edf3;color:var(--navy)}
 }
+
+
+/* Letter-to-the-editor support page */
+.principle-list{margin:.8rem 0 0;padding-left:1.25rem}
+.principle-list li{margin:.6rem 0;line-height:1.55}
+.principle-list li::marker{color:var(--red)}
+.principle-list strong{color:var(--navy);font-weight:800}
+.editor-hint{margin:1rem 0 .25rem;padding:.85rem 1rem;border-left:.35rem solid var(--red);background:#eef2f6;color:var(--ink);line-height:1.5}
+.editor-hint strong{color:var(--navy)}
+.letter-layout{margin:1rem 0 .3rem;padding:1rem;border:1.5px solid var(--navy);background:#f0f0f0;color:var(--ink);font-size:.95rem}
+.letter-meta{display:grid;grid-template-columns:1fr 1fr;gap:.45rem 1rem}
+.letter-meta .right{text-align:right}
+.letter-subject{margin:1.15rem 0 .9rem;font-weight:800}
+.letter-subject em{font-weight:600}
+.letter-salutation{margin:.8rem 0;font-style:italic;font-weight:700}
+.writing-steps{display:grid;gap:.75rem;margin:.9rem 0}
+.writing-step{display:grid;grid-template-columns:2.15rem 1fr;gap:.65rem;align-items:start}
+.step-number{display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--navy);color:#fff;font-size:.82rem;font-weight:850}
+.writing-step:nth-child(2) .step-number{background:var(--red)}
+.writing-step strong{color:var(--navy)}
+.writing-step p{margin:0;color:var(--ink);line-height:1.5}
+.letter-signature{margin:.9rem 0 0;font-style:italic}
+.phrase-group{margin:1rem 0 0;padding:.9rem 1rem;border-left:.3rem solid var(--navy);background:#f3f3f3}
+.phrase-group.is-red{border-left-color:var(--red)}
+.phrase-heading{margin:0 0 .55rem!important;color:var(--navy)!important;font-size:1rem!important}
+.phrase-group.is-red .phrase-heading{color:var(--red)!important}
+.phrase-list{margin:0;padding:0;list-style:none}
+.phrase-list li{position:relative;margin:.42rem 0;padding-left:1rem;color:#2f3d4c;font-style:italic;line-height:1.45}
+.phrase-list li::before{content:"›";position:absolute;left:0;color:var(--red);font-style:normal;font-weight:900}
+.language-note{margin:.95rem 0 .2rem;color:var(--ink)}
+.language-note strong{color:var(--navy)}
+@media (max-width:42rem){
+  .letter-layout{padding:.75rem;font-size:.9rem}
+  .letter-meta{grid-template-columns:1fr}
+  .letter-meta .right{text-align:left}
+  .writing-step{grid-template-columns:1.9rem 1fr;gap:.5rem}
+  .step-number{width:1.75rem;height:1.75rem}
+  .phrase-group{padding:.75rem}
+}
