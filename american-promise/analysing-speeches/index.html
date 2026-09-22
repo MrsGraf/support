@@ -258,6 +258,7 @@
       outline:3px solid rgba(167,53,61,.22);
       outline-offset:3px;
     }
+    .accordion-stack > .support-card { scroll-margin-top:.75rem; }
     @media (max-width:58rem) {
       .tone-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
     }
@@ -601,6 +602,19 @@
         button.setAttribute('aria-expanded', String(!isOpen));
         panel.classList.toggle('hidden', isOpen);
         button.lastElementChild.textContent = isOpen ? '+' : '−';
+
+        if (!isOpen) {
+          const card = button.closest('.support-card');
+          const scrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? 'auto'
+            : 'smooth';
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              card.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
+            });
+          });
+        }
       });
     });
   </script>
