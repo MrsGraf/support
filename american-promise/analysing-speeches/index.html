@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173a63">
+  <title>Skills training: Analysing (political) speeches</title>
+  <link rel="stylesheet" href="../../assets/style.css?v=6">
+  <style>
+    .speech-intro,
+    .speech-tip {
+      margin:.9rem 0;
+      padding:.9rem 1rem;
+      border-left:.35rem solid var(--red);
+      background:#eef2f6;
+      color:var(--ink);
+      line-height:1.55;
+    }
+    .speech-tip { border-left-color:var(--navy); background:#f8fafc; }
+    .speech-intro strong,
+    .speech-tip strong { color:var(--navy); }
+    .aim-list,
+    .speech-list { margin:.65rem 0 0; padding-left:1.25rem; }
+    .aim-list li,
+    .speech-list li { margin:.48rem 0; line-height:1.5; }
+    .aim-list li::marker,
+    .speech-list li::marker { color:var(--red); }
+    .context-grid,
+    .purpose-grid,
+    .device-grid,
+    .tone-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:.75rem;
+      margin:.85rem 0;
+    }
+    .context-item,
+    .purpose-item,
+    .device-item,
+    .tone-item {
+      padding:.82rem .9rem;
+      border:1px solid var(--line);
+      border-top:.25rem solid var(--navy);
+      background:#f3f3f3;
+      line-height:1.48;
+    }
+    .context-item:nth-child(even),
+    .purpose-item:nth-child(even),
+    .device-item:nth-child(even),
+    .tone-item:nth-child(even) { border-top-color:var(--red); }
+    .context-item strong,
+    .purpose-item strong,
+    .device-item strong,
+    .tone-item strong { color:var(--navy); }
+    .purpose-item p,
+    .device-item p,
+    .tone-item p { margin:.3rem 0 0; color:var(--ink); line-height:1.48; }
+    .model-introduction {
+      margin:1rem 0 .2rem;
+      padding:.9rem 1rem;
+      border:1.5px solid var(--navy);
+      background:#f3f3f3;
+      color:var(--ink);
+      line-height:1.55;
+    }
+    .model-introduction strong { color:var(--navy); }
+    .model-introduction em { color:#2f3d4c; }
+    .speech-structure { display:grid; gap:.8rem; margin:.9rem 0; }
+    .speech-stage {
+      display:grid;
+      grid-template-columns:2.15rem 1fr;
+      gap:.7rem;
+      align-items:start;
+    }
+    .speech-stage p { margin:0; color:var(--ink); line-height:1.5; }
+    .speech-stage strong { color:var(--navy); }
+    .speech-stage .step-number { margin-top:.05rem; }
+    .speech-stage:nth-child(2) .step-number { background:var(--red); }
+    .device-heading {
+      margin:1.2rem 0 .55rem!important;
+      padding-bottom:.35rem;
+      border-bottom:2px solid var(--line);
+      color:var(--navy)!important;
+    }
+    .device-name { color:var(--red)!important; }
+    .example-line { display:block; margin-top:.35rem; color:#2f3d4c; font-style:italic; }
+    .tone-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .tone-item { min-height:100%; }
+    .tone-item p { font-size:.93rem; }
+    .analysis-chain {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      margin:1rem 0;
+      padding:.9rem;
+      background:#eef2f6;
+      border:1px solid var(--line);
+    }
+    .analysis-chain span {
+      padding:.45rem .7rem;
+      border-radius:999px;
+      background:#fff;
+      color:var(--navy);
+      font-weight:800;
+    }
+    .analysis-chain b { color:var(--red); }
+    .download-section { margin-top:1.5rem; }
+    .download-card { padding:1.2rem; }
+    .download-link {
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      border:0;
+      border-radius:.75rem;
+      padding:1rem;
+      text-decoration:none;
+      background:var(--red);
+      color:#fff;
+      font:inherit;
+      font-weight:800;
+      font-size:1.05rem;
+    }
+    .download-link:hover,
+    .download-link:focus-visible {
+      background:#852a31;
+      outline:3px solid rgba(167,53,61,.22);
+      outline-offset:3px;
+    }
+    .download-note { margin:.75rem .15rem 0; color:var(--muted); font-size:.92rem; }
+    @media (max-width:42rem) {
+      .context-grid,
+      .purpose-grid,
+      .device-grid,
+      .tone-grid { grid-template-columns:1fr; }
+      .speech-stage { grid-template-columns:1.9rem 1fr; gap:.5rem; }
+      .download-card { padding:.75rem; }
+      .download-link { font-size:1rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell unit-shell">
+    <header class="unit-header">
+      <img class="unit-banner" src="../../assets/american-promise-support-header.svg?v=2" alt="The American Promise – Support">
+    </header>
+
+    <h1 class="support-title">Skills training: Analysing (political) speeches</h1>
+
+    <section class="accordion-stack" aria-label="Speech-analysis support">
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="context-panel">
+          <span>Step 1 · Context and introduction</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="context-panel">
+          <aside class="speech-intro">
+            Political speeches are usually <strong>carefully crafted</strong>: speakers choose their words to influence a particular audience in a particular situation. A speech may aim to raise awareness, promote a vision, convince listeners or challenge them to act. Often, several of these aims overlap.
+          </aside>
+
+          <p class="method-focus">Before analysing the speech, establish its communicative situation.</p>
+          <div class="context-grid">
+            <div class="context-item"><strong>Who?</strong><br>Who is speaking, and what is their role at this point in time?</div>
+            <div class="context-item"><strong>When and on what occasion?</strong><br>Was the speech given before an election, after a major event or during a public debate?</div>
+            <div class="context-item"><strong>Where?</strong><br>In which country and at what kind of venue was the speech delivered?</div>
+            <div class="context-item"><strong>To whom?</strong><br>Who is the audience: supporters, opponents, politicians, workers, students or the wider public?</div>
+            <div class="context-item"><strong>With which aim?</strong><br>Does the speaker want to thank, convince, inspire, reassure, warn or challenge the audience?</div>
+            <div class="context-item"><strong>On what topic?</strong><br>What issue, vision, problem or plan does the speaker address?</div>
+          </div>
+
+          <div class="model-introduction">
+            <strong>Model introduction:</strong><br>
+            <em>The excerpt from Senator Barack Obama’s political speech “Change We Can Believe In”, his Democratic nomination victory speech delivered on 3 June 2008 in St Paul, Minnesota, aims to convince the audience that he is the right candidate for the 2008 presidential election and outlines his goals and beliefs.</em>
+          </div>
+
+          <div class="phrase-group">
+            <h2 class="phrase-heading">Useful elements for your introductory sentence</h2>
+            <ul class="phrase-list">
+              <li>speaker and role</li>
+              <li>title and text type</li>
+              <li>occasion, place and date</li>
+              <li>audience and topic</li>
+              <li>central communicative aim</li>
+            </ul>
+          </div>
+          <aside class="speech-tip"><strong>Remember:</strong> Relevant socio-political background knowledge helps you understand references, values and ideas such as the American Dream or the American Promise.</aside>
+        </div>
+      </article>
+
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="argument-panel">
+          <span>Step 2 · Structure and line of argument</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="argument-panel">
+          <p class="method-focus">Reconstruct how the speaker develops the central idea from beginning to end.</p>
+
+          <div class="speech-structure">
+            <div class="speech-stage">
+              <span class="step-number">1</span>
+              <p><strong>Introduction:</strong> The speaker attracts attention and establishes the purpose and topic, for example by asking a question, telling a short story, pointing out a problem or referring to a current event, object, image or statistic.</p>
+            </div>
+            <div class="speech-stage">
+              <span class="step-number">2</span>
+              <p><strong>Main part:</strong> The speaker develops the main ideas step by step, supports them with evidence and background information, illustrates them with examples or personal experience and may propose solutions.</p>
+            </div>
+            <div class="speech-stage">
+              <span class="step-number">3</span>
+              <p><strong>Conclusion:</strong> The speaker often summarises key ideas, presents an outlook, reaffirms a vision or ends with an emotional appeal or call for action.</p>
+            </div>
+          </div>
+
+          <aside class="speech-tip"><strong>Common movement:</strong> Many speeches begin with a specific example, event or story and then move towards a more general problem, idea or vision.</aside>
+
+          <div class="phrase-group">
+            <h2 class="phrase-heading">Useful language for outlining the argument</h2>
+            <ul class="phrase-list">
+              <li>The speaker starts off with / begins by ...</li>
+              <li>The speaker provides several arguments / facts for ...</li>
+              <li>They compare ... with ... / illustrate ... / criticise ...</li>
+              <li>They claim / state / concede / admit that ...</li>
+              <li>They challenge / question / refute the idea that ...</li>
+              <li>They focus on / provide background information about ...</li>
+              <li>They suggest / offer a solution to ...</li>
+              <li>The argument shifts from ... to ...</li>
+              <li>The speaker concludes by suggesting / reaffirming / appealing for ...</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="strategies-panel">
+          <span>Step 3 · Communicative strategies and references</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="strategies-panel">
+          <p class="method-focus">Identify the strategies that shape the speaker’s relationship with the audience and make the message convincing or memorable.</p>
+
+          <div class="device-grid">
+            <div class="device-item"><strong class="device-name">Pronouns</strong><p>Inclusive <em>we/us</em> can create unity; <em>we/us</em> versus <em>they/them</em> may create opposing groups. Direct address with <em>you</em> involves the listener. Frequent <em>I</em> may present the speaker as active, responsible or powerful.</p></div>
+            <div class="device-item"><strong class="device-name">Concrete examples and details</strong><p>Specific, authentic or current cases can illustrate an issue, emphasise its relevance and make an abstract problem easier to understand.</p></div>
+            <div class="device-item"><strong class="device-name">Personal anecdotes</strong><p>Stories can make an issue relatable, create an emotional connection and present the speaker as approachable or “one of us”.</p></div>
+            <div class="device-item"><strong class="device-name">Authority and evidence</strong><p>Expert opinions, quotations, facts and statistics can strengthen credibility and make an argument appear well founded.</p></div>
+            <div class="device-item"><strong class="device-name">Background information</strong><p>Explanations can demonstrate competence and help the audience understand a complex topic.</p></div>
+            <div class="device-item"><strong class="device-name">Questions</strong><p>Direct or rhetorical questions can attract attention, invite reflection and challenge listeners to consider their own position.</p></div>
+            <div class="device-item"><strong class="device-name">Generalisation and simplification</strong><p>Sweeping statements can reduce complexity and offer clear solutions, but may omit important details or alternative viewpoints.</p></div>
+            <div class="device-item"><strong class="device-name">Humour</strong><p>Jokes can entertain, lighten the mood, maintain attention and strengthen the connection with the audience.</p></div>
+          </div>
+
+          <h2 class="device-heading">What these strategies may achieve</h2>
+          <div class="purpose-grid">
+            <div class="purpose-item"><strong>Build a connection</strong><p>through inclusive pronouns, personal stories, conversational language or humour</p></div>
+            <div class="purpose-item"><strong>Make ideas accessible</strong><p>through examples, details, stories and careful simplification</p></div>
+            <div class="purpose-item"><strong>Increase credibility</strong><p>through facts, statistics, expert opinions and quotations</p></div>
+            <div class="purpose-item"><strong>Place emphasis</strong><p>through striking details, examples, illustrations or repetition</p></div>
+            <div class="purpose-item"><strong>Maintain attention</strong><p>through surprising stories, questions, direct address or jokes</p></div>
+            <div class="purpose-item"><strong>Shape the speaker’s image</strong><p>as competent, relatable, witty, trustworthy, strong or compassionate</p></div>
+          </div>
+
+          <h2 class="device-heading">Motifs, historical references, symbols and role models</h2>
+          <ul class="speech-list">
+            <li>American speakers may draw on key ideas such as the <strong>American Dream</strong>, independence, freedom, equality, opportunity or American exceptionalism.</li>
+            <li>Historical references can suggest continuity, compare past and present or place the speaker within a valued tradition.</li>
+            <li>Symbols and places can represent larger ideas, for example the White House for the US government or Wall Street for business and finance.</li>
+            <li>National role models such as Martin Luther King Jr may be quoted or praised to connect the speaker’s message with courage, justice or another shared value.</li>
+          </ul>
+          <aside class="speech-tip"><strong>Ask why this reference appears here:</strong> Does it legitimise the speaker, create shared identity, recall a national promise or connect a current proposal to an admired tradition?</aside>
+        </div>
+      </article>
+
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="language-panel">
+          <span>Step 4 · Language, tone and stylistic devices</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="language-panel">
+          <h2 class="device-heading">Syntax and sentence structure</h2>
+          <ul class="speech-list">
+            <li><strong>Short sentences</strong> can sound punchy, intense, urgent and memorable.</li>
+            <li><strong>Long or complex sentences</strong> may sound reflective, explanatory, abstract or distancing.</li>
+            <li><strong>Parallel syntax</strong> connects ideas, creates rhythm and can emphasise contrasts or key points.</li>
+          </ul>
+
+          <h2 class="device-heading">Tone</h2>
+          <p>The tone is the attitude or mood created by the speaker’s language. Look for evidence and notice shifts in tone.</p>
+          <div class="tone-grid">
+            <div class="tone-item"><strong>serious · distant · impersonal</strong><p>formal, factual or detached</p></div>
+            <div class="tone-item"><strong>hopeful · enthusiastic · patriotic</strong><p>positive, visionary or uplifting</p></div>
+            <div class="tone-item"><strong>humorous · ironic · witty</strong><p>playful, self-mocking or entertaining</p></div>
+            <div class="tone-item"><strong>authentic · vulnerable · emotional</strong><p>personal, heartfelt or compassionate</p></div>
+            <div class="tone-item"><strong>concerned · worried · pessimistic</strong><p>focused on dangers, problems or the future</p></div>
+            <div class="tone-item"><strong>mocking · provocative · sarcastic</strong><p>ridiculing or attacking another person or view</p></div>
+            <div class="tone-item"><strong>challenging · angry · aggressive</strong><p>urgent, confrontational or strongly judgemental</p></div>
+          </div>
+          <aside class="speech-tip"><strong>Do not merely label the tone:</strong> Explain which words, images or structures create it and how it supports the speaker’s purpose.</aside>
+
+          <h2 class="device-heading">Word fields and choice of words</h2>
+          <ul class="speech-list">
+            <li>Look for semantic fields such as <em>war</em>, <em>nature</em>, <em>religion</em>, <em>journey</em> or <em>family</em>.</li>
+            <li>Examine strongly positive or negative connotations and the associations they create.</li>
+            <li>Consider whether the speaker uses formal, technical, colloquial, simple or emotionally charged language.</li>
+          </ul>
+
+          <h2 class="device-heading">Important stylistic devices</h2>
+          <div class="device-grid">
+            <div class="device-item"><strong class="device-name">Simile</strong><p>A direct comparison using <em>as</em> or <em>like</em>.</p></div>
+            <div class="device-item"><strong class="device-name">Metaphor</strong><p>An implied comparison. Common fields in political speeches include journeys, illness, games, battles, nature and machines or systems.</p></div>
+            <div class="device-item"><strong class="device-name">Personification</strong><p>A human quality or action is attributed to something non-human.<span class="example-line">“Huge cities never sleep.”</span></p></div>
+            <div class="device-item"><strong class="device-name">Metonymy</strong><p>A related term stands for a larger institution or idea.<span class="example-line">“The White House declared ...”</span></p></div>
+            <div class="device-item"><strong class="device-name">Alliteration</strong><p>The repetition of an initial consonant sound in neighbouring words.</p></div>
+            <div class="device-item"><strong class="device-name">Anaphora</strong><p>The repetition of the same word or phrase at the beginning of successive clauses or sentences.</p></div>
+            <div class="device-item"><strong class="device-name">Antithesis / contrast</strong><p>Opposing ideas are placed next to each other, often in a parallel structure.</p></div>
+            <div class="device-item"><strong class="device-name">Repetition</strong><p>Words or phrases are repeated to reinforce an idea and make it memorable.</p></div>
+            <div class="device-item"><strong class="device-name">Parallelism</strong><p>Similar grammatical structures create rhythm, connect ideas or highlight a contrast.</p></div>
+            <div class="device-item"><strong class="device-name">Rule of three</strong><p>Three parallel words, phrases or clauses create balance and emphasis.</p></div>
+            <div class="device-item"><strong class="device-name">Climax</strong><p>Ideas are arranged in order of increasing importance or intensity.</p></div>
+            <div class="device-item"><strong class="device-name">Hyperbole / understatement</strong><p>Deliberate exaggeration or deliberate downplaying can dramatise, ridicule or entertain.</p></div>
+            <div class="device-item"><strong class="device-name">Pun</strong><p>A play on words uses a double meaning to attract attention or create humour.</p></div>
+          </div>
+
+          <aside class="speech-tip"><strong>Effects depend on context:</strong> A device may attract attention, create a vivid image, dramatise or simplify an issue, entertain the audience or reinforce a contrast. Do not assign an automatic effect—explain what this particular device does in this particular passage.</aside>
+        </div>
+      </article>
+
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="writing-panel">
+          <span>Step 5 · Writing the analysis</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="writing-panel">
+          <p class="method-focus">Build analytical paragraphs instead of listing devices.</p>
+          <div class="analysis-chain" aria-label="Recommended analytical sequence">
+            <span>evidence</span><b>→</b><span>technique</span><b>→</b><span>effect on the audience</span><b>→</b><span>contribution to the speaker’s aim</span>
+          </div>
+
+          <div class="phrase-group">
+            <h2 class="phrase-heading">Useful analytical phrases</h2>
+            <ul class="phrase-list">
+              <li>The speaker uses / employs / makes use of ...</li>
+              <li>The speaker alludes to / suggests that ...</li>
+              <li>They draw a comparison / an analogy between ...</li>
+              <li>They compare / contrast ... with ...</li>
+              <li>The speaker uses images / examples / metaphors / personification to convey a vivid impression of ...</li>
+              <li>The function / aim / effect of ... is to ...</li>
+              <li>The intention behind this ... is to ...</li>
+              <li>By using this device, the speaker tries to ...</li>
+              <li>This device serves to / helps to ...</li>
+              <li>The speaker illustrates the argument by ...</li>
+              <li>The repetition / alliteration / analogy underlines / stresses / underscores that ...</li>
+              <li>The speaker’s criticism / irony is directed against ...</li>
+            </ul>
+          </div>
+
+          <h2 class="device-heading">Final checklist</h2>
+          <ul class="speech-list">
+            <li>Read the task carefully and focus on the aspect named by the operator.</li>
+            <li>Select relevant and powerful evidence instead of collecting random devices.</li>
+            <li>Group your findings logically by analytical aspect rather than working through the speech line by line.</li>
+            <li>Use one paragraph for each analytical aspect and connect it to the speaker’s purpose or effect on the audience.</li>
+            <li>Use the simple present when referring to the speech: <em>Obama argues; Trump claims.</em></li>
+            <li>Quote briefly and accurately. Integrate quotations into your own sentences and include line references.</li>
+            <li>End with a conclusion that summarises the most important findings and their combined effect.</li>
+          </ul>
+
+          <aside class="speech-tip"><strong>Keep it clear and logical:</strong> The quality of an analysis depends on how convincingly you explain the connection between evidence, technique, effect and overall argument—not on the number of devices you name.</aside>
+        </div>
+      </article>
+    </section>
+
+    <section class="download-section" aria-label="Download the original method sheet">
+      <article class="support-card download-card">
+        <a class="download-link" href="AB_Political_speeches_Methodensheet.pdf" download>
+          <span>Download the original method sheet (PDF)</span><span aria-hidden="true">↓</span>
+        </a>
+        <p class="download-note">Save the four-page PDF to your files and add it to your course materials.</p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.reveal-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        panel.classList.toggle('hidden', isOpen);
+        button.lastElementChild.textContent = isOpen ? '+' : '−';
+      });
+    });
+  </script>
+</body>
+</html>
