@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173a63">
+  <title>Support overview · The American Promise</title>
+  <link rel="stylesheet" href="../assets/style.css?v=6">
+  <style>
+    .overview-intro {
+      margin:.9rem 0 1.15rem;
+      padding:.9rem 1rem;
+      border-left:.35rem solid var(--red);
+      background:#eef2f6;
+      color:var(--ink);
+      line-height:1.55;
+    }
+
+    .support-overview {
+      display:grid;
+      gap:.85rem;
+      margin:0 0 1.5rem;
+    }
+
+    .overview-card {
+      display:block;
+      padding:1rem 1.05rem;
+      border:1px solid var(--line);
+      border-top:.28rem solid var(--navy);
+      border-radius:.55rem;
+      background:#fff;
+      color:var(--ink);
+      text-decoration:none;
+      box-shadow:0 .18rem .55rem rgba(23,58,99,.08);
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+
+    .overview-card:nth-child(even) {
+      border-top-color:var(--red);
+    }
+
+    .overview-card:hover,
+    .overview-card:focus-visible {
+      transform:translateY(-2px);
+      box-shadow:0 .35rem .9rem rgba(23,58,99,.14);
+      outline:none;
+    }
+
+    .overview-card:focus-visible {
+      box-shadow:0 0 0 3px rgba(23,58,99,.18), 0 .35rem .9rem rgba(23,58,99,.14);
+    }
+
+    .overview-card h2 {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:.8rem;
+      margin:0 0 .35rem;
+      color:var(--navy);
+      font-size:1.08rem;
+      line-height:1.3;
+    }
+
+    .overview-card h2::after {
+      content:"›";
+      flex:0 0 auto;
+      color:var(--red);
+      font-size:1.55rem;
+      line-height:1;
+    }
+
+    .overview-card p {
+      margin:0;
+      color:#2f3d4c;
+      line-height:1.48;
+    }
+
+    .overview-card strong {
+      color:var(--navy);
+    }
+
+    @media (min-width:46rem) {
+      .support-overview {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .overview-card {
+        min-height:8.8rem;
+      }
+    }
+  </style>
+</head>
+<body class="support-page american-promise">
+  <main class="shell unit-shell">
+    <header class="unit-header">
+      <img class="unit-banner" src="../assets/american-promise-support-header.svg?v=2" alt="Support — The American Promise — Dream. Reality. Responsibility.">
+    </header>
+
+    <h1 class="support-title">Support overview</h1>
+
+    <aside class="overview-intro">
+      Choose the support you need. These pages provide guidance, examples and useful language for analysing texts and developing your own writing.
+    </aside>
+
+    <nav class="support-overview" aria-label="American Promise support pages">
+      <a class="overview-card" href="analysing-speeches/">
+        <h2>Analysing (political) speeches</h2>
+        <p>A comprehensive method sheet covering <strong>context, communicative strategies, tone, stylistic devices, line of argument, delivery and conclusion</strong>.</p>
+      </a>
+
+      <a class="overview-card" href="line-of-argument/">
+        <h2>Reconstructing the line of argument</h2>
+        <p>Support for identifying <strong>main ideas, connections and the function of individual sections</strong> within an overall argument.</p>
+      </a>
+
+      <a class="overview-card" href="device-to-argument/">
+        <h2>From device to overall argument</h2>
+        <p>Guidance for moving beyond naming a stylistic device: <strong>identify it, explain its effect and connect it to the speaker’s wider argument</strong>.</p>
+      </a>
+
+      <a class="overview-card" href="letter-to-editor/">
+        <h2>Writing a letter to the editor</h2>
+        <p>Guidance on <strong>purpose, structure, layout and useful language</strong> for writing a concise and persuasive letter to the editor.</p>
+      </a>
+    </nav>
+  </main>
+</body>
+</html>
