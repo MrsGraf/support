@@ -14,6 +14,8 @@
       --analysis-soft:#eaf4f2;
       --production:#6e587d;
       --production-soft:#f1edf4;
+      --listening:#667a60;
+      --listening-soft:#eef3ec;
     }
 
     .exam-section {
@@ -40,6 +42,11 @@
     .exam-section.production {
       --section-color:var(--production);
       --section-soft:var(--production-soft);
+    }
+
+    .exam-section.listening {
+      --section-color:var(--listening);
+      --section-soft:var(--listening-soft);
     }
 
     .exam-heading {
@@ -74,15 +81,35 @@
     }
 
     .exam-chevron {
-      flex:0 0 auto;
+      display:grid;
+      place-items:center;
+      flex:0 0 1.6rem;
+      width:1.6rem;
+      height:1.6rem;
       font-size:1.35rem;
       font-weight:800;
       line-height:1;
-      transition:transform .18s ease;
     }
 
-    .exam-toggle[aria-expanded="true"] .exam-chevron {
-      transform:rotate(45deg);
+    .exam-symbol {
+      display:grid;
+      place-items:center;
+      flex:0 0 2rem;
+      width:2rem;
+      height:2rem;
+      border-radius:50%;
+      background:#fff;
+      color:var(--section-color);
+    }
+
+    .exam-symbol svg {
+      width:1.15rem;
+      height:1.15rem;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.9;
+      stroke-linecap:round;
+      stroke-linejoin:round;
     }
 
     .exam-number {
@@ -463,6 +490,49 @@
         </div>
       </div>
     </section>
+
+    <section class="exam-section listening">
+      <h2 class="exam-heading">
+        <button class="exam-toggle" type="button" aria-expanded="false" aria-controls="exam-listening">
+          <span class="exam-symbol" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 13v-1a8 8 0 0 1 16 0v1"></path>
+              <path d="M4 13h3v6H5.5A1.5 1.5 0 0 1 4 17.5V13Z"></path>
+              <path d="M20 13h-3v6h1.5a1.5 1.5 0 0 0 1.5-1.5V13Z"></path>
+            </svg>
+          </span>
+          <span class="exam-title">Listening comprehension</span>
+          <span class="exam-chevron" aria-hidden="true">+</span>
+        </button>
+      </h2>
+      <div class="exam-body" id="exam-listening" hidden>
+        <p class="section-note">
+          Listening tasks test whether you can identify <strong>relevant information while listening</strong>. Read the task carefully before the recording starts, focus on what is actually being asked and do not try to understand every single word.
+        </p>
+
+        <div class="operator-box">
+          <div class="operator-header">
+            <span class="operator-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h2M9 8v8M13 5v14M17 8v8M21 11v2"></path>
+              </svg>
+            </span>
+            <div class="operator-heading-wrap">
+              <span class="operator-kicker">Key strategies</span>
+              <h3 class="operator-title">Listen selectively</h3>
+            </div>
+          </div>
+          <p class="operator-intro">Use the task as your guide: anticipate the information you need, listen for meaning rather than isolated words and keep listening if you miss something.</p>
+
+          <div class="operator-grid">
+            <div class="operator-item"><strong>Before listening</strong>Read the questions and identify key words, contrasts and the type of information you need.</div>
+            <div class="operator-item"><strong>While listening</strong>Focus on the relevant information and the overall meaning instead of trying to understand every word.</div>
+            <div class="operator-item"><strong>Watch out for distractors</strong>Something may be mentioned in the recording without actually answering the question.</div>
+            <div class="operator-item"><strong>Keep going</strong>If you miss one detail, do not stop mentally — continue listening and return to the item if possible.</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -474,11 +544,13 @@
         document.querySelectorAll('.exam-toggle').forEach((otherButton) => {
           if (otherButton !== button) {
             otherButton.setAttribute('aria-expanded', 'false');
+            otherButton.querySelector('.exam-chevron').textContent = '+';
             document.getElementById(otherButton.getAttribute('aria-controls')).hidden = true;
           }
         });
 
         button.setAttribute('aria-expanded', String(!isOpen));
+        button.querySelector('.exam-chevron').textContent = isOpen ? '+' : '−';
         panel.hidden = isOpen;
       });
     });
