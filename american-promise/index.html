@@ -43,15 +43,46 @@
     }
 
     .exam-heading {
+      margin:0;
+    }
+
+    .exam-toggle {
       display:flex;
       align-items:center;
+      width:100%;
       gap:.8rem;
       margin:0;
       padding:.9rem 1rem;
+      border:0;
       background:var(--section-color);
       color:#fff;
+      font:inherit;
       font-size:1.2rem;
+      font-weight:700;
       line-height:1.25;
+      text-align:left;
+      cursor:pointer;
+    }
+
+    .exam-toggle:focus-visible {
+      outline:3px solid color-mix(in srgb, var(--section-color) 35%, #fff);
+      outline-offset:-3px;
+    }
+
+    .exam-title {
+      flex:1 1 auto;
+    }
+
+    .exam-chevron {
+      flex:0 0 auto;
+      font-size:1.35rem;
+      font-weight:800;
+      line-height:1;
+      transition:transform .18s ease;
+    }
+
+    .exam-toggle[aria-expanded="true"] .exam-chevron {
+      transform:rotate(45deg);
     }
 
     .exam-number {
@@ -68,6 +99,10 @@
 
     .exam-body {
       padding:1rem;
+    }
+
+    .exam-body[hidden] {
+      display:none;
     }
 
     .section-note {
@@ -277,8 +312,12 @@
     <h1 class="support-title">Exam Training</h1>
 
     <section class="exam-section comprehension">
-      <h2 class="exam-heading"><span class="exam-number">1</span>Comprehension</h2>
-      <div class="exam-body">
+      <h2 class="exam-heading">
+        <button class="exam-toggle" type="button" aria-expanded="false" aria-controls="exam-comprehension">
+          <span class="exam-number">1</span><span class="exam-title">Comprehension</span><span class="exam-chevron" aria-hidden="true">+</span>
+        </button>
+      </h2>
+      <div class="exam-body" id="exam-comprehension" hidden>
         <p class="section-note">
           Show that you have understood the text and can present the relevant information clearly and concisely. Comprehension tasks test your <strong>selective understanding</strong> of the text: there will usually be information that should be left out. Pay close attention to the <strong>focus specified in the task</strong> and select only the information that directly answers it.
         </p>
@@ -318,8 +357,12 @@
     </section>
 
     <section class="exam-section analysis">
-      <h2 class="exam-heading"><span class="exam-number">2</span>Analysis</h2>
-      <div class="exam-body">
+      <h2 class="exam-heading">
+        <button class="exam-toggle" type="button" aria-expanded="false" aria-controls="exam-analysis">
+          <span class="exam-number">2</span><span class="exam-title">Analysis</span><span class="exam-chevron" aria-hidden="true">+</span>
+        </button>
+      </h2>
+      <div class="exam-body" id="exam-analysis" hidden>
         <p class="section-note">
           Examine <strong>how</strong> a text works. Support your findings with suitable textual evidence and explain how individual aspects contribute to meaning, effect or the overall argument. Always keep the specific focus of the task in mind rather than analysing every possible feature.
         </p>
@@ -374,8 +417,12 @@
     </section>
 
     <section class="exam-section production">
-      <h2 class="exam-heading"><span class="exam-number">3</span>Comment / Re-creation of text</h2>
-      <div class="exam-body">
+      <h2 class="exam-heading">
+        <button class="exam-toggle" type="button" aria-expanded="false" aria-controls="exam-production">
+          <span class="exam-number">3</span><span class="exam-title">Comment / Re-creation of text</span><span class="exam-chevron" aria-hidden="true">+</span>
+        </button>
+      </h2>
+      <div class="exam-body" id="exam-production" hidden>
         <p class="section-note">
           Develop your own well-founded response or produce a text for a specific communicative situation. Pay attention to <strong>purpose, audience and text type</strong> and make sure that your ideas are relevant to the exact task.
         </p>
@@ -417,5 +464,24 @@
       </div>
     </section>
   </main>
+
+  <script>
+    document.querySelectorAll('.exam-toggle').forEach((button) => {
+      button.addEventListener('click', () => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+        document.querySelectorAll('.exam-toggle').forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.setAttribute('aria-expanded', 'false');
+            document.getElementById(otherButton.getAttribute('aria-controls')).hidden = true;
+          }
+        });
+
+        button.setAttribute('aria-expanded', String(!isOpen));
+        panel.hidden = isOpen;
+      });
+    });
+  </script>
 </body>
 </html>
