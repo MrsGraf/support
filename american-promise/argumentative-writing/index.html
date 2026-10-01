@@ -22,6 +22,19 @@
       background:#f8fafc;
     }
 
+    .writing-warning {
+      margin:.9rem 0;
+      padding:.9rem 1rem;
+      border-left:.38rem solid #a7353d;
+      background:#f7ecee;
+      color:var(--ink);
+      line-height:1.55;
+    }
+
+    .writing-warning strong {
+      color:#a7353d;
+    }
+
     .operator-paths {
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -232,7 +245,7 @@
             <span class="step-number">1</span>
             <div>
               <h2>Open the topic</h2>
-              <p>Start with a brief general opening statement that leads into the issue.</p>
+              <p>Start with a brief general opening statement that leads into the issue. <strong>Choose one suitable approach</strong> — you do not need to use all of them.</p>
               <div class="opening-options" aria-label="Possible ways to open">
                 <span>relevant context</span>
                 <span>definition of a key term</span>
@@ -258,7 +271,7 @@
             </div>
           </div>
 
-          <aside class="writing-tip"><strong>Avoid:</strong> “In the following, I am going to comment on …”</aside>
+          <aside class="writing-warning"><strong>Do not write:</strong> “In the following, I am going to comment on …”</aside>
         </div>
       </article>
 
