@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173a63">
+  <title>Skills training: Argumentative writing</title>
+  <link rel="stylesheet" href="../../assets/style.css?v=6">
+  <style>
+    .writing-intro,
+    .writing-tip {
+      margin:.9rem 0;
+      padding:.9rem 1rem;
+      border-left:.35rem solid var(--red);
+      background:#eef2f6;
+      color:var(--ink);
+      line-height:1.55;
+    }
+
+    .writing-tip {
+      border-left-color:var(--navy);
+      background:#f8fafc;
+    }
+
+    .operator-paths {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:.7rem;
+      margin:.85rem 0;
+    }
+
+    .operator-path {
+      padding:.85rem .9rem;
+      border:1px solid var(--line);
+      border-top:.28rem solid var(--navy);
+      background:#f8fafc;
+      line-height:1.45;
+    }
+
+    .operator-path:nth-child(2) { border-top-color:var(--red); }
+    .operator-path:nth-child(3) { border-top-color:#6e587d; }
+
+    .operator-path strong {
+      display:block;
+      margin-bottom:.25rem;
+      color:var(--navy);
+    }
+
+    .planning-list,
+    .writing-list {
+      margin:.65rem 0 0;
+      padding-left:1.25rem;
+    }
+
+    .planning-list li,
+    .writing-list li {
+      margin:.46rem 0;
+      line-height:1.5;
+    }
+
+    .planning-list li::marker,
+    .writing-list li::marker {
+      color:var(--red);
+    }
+
+    .structure-stage {
+      display:grid;
+      grid-template-columns:2.2rem 1fr;
+      gap:.7rem;
+      align-items:start;
+      margin:.9rem 0;
+    }
+
+    .step-number {
+      display:grid;
+      place-items:center;
+      width:2rem;
+      height:2rem;
+      border-radius:50%;
+      background:var(--red);
+      color:#fff;
+      font-weight:850;
+    }
+
+    .structure-stage h2 {
+      margin:.1rem 0 .3rem;
+      color:var(--navy);
+      font-size:1.02rem;
+    }
+
+    .structure-stage p {
+      margin:0;
+      color:var(--ink);
+      line-height:1.5;
+    }
+
+    .opening-options {
+      display:flex;
+      flex-wrap:wrap;
+      gap:.45rem;
+      margin:.6rem 0 .2rem;
+    }
+
+    .opening-options span {
+      padding:.38rem .62rem;
+      border-radius:999px;
+      background:#eef2f6;
+      color:var(--navy);
+      font-size:.9rem;
+      font-weight:750;
+    }
+
+    .argument-chain {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+      gap:.5rem;
+      margin:1rem 0;
+      padding:.9rem;
+      background:#eef2f6;
+      border:1px solid var(--line);
+    }
+
+    .argument-chain span {
+      padding:.45rem .7rem;
+      border-radius:999px;
+      background:#fff;
+      color:var(--navy);
+      font-weight:800;
+    }
+
+    .argument-chain b { color:var(--red); }
+
+    .phrase-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:.75rem;
+      margin:.85rem 0;
+    }
+
+    .phrase-group {
+      padding:.8rem .9rem;
+      border:1px solid var(--line);
+      border-top:.25rem solid var(--navy);
+      background:#f8fafc;
+    }
+
+    .phrase-group:nth-child(even) { border-top-color:var(--red); }
+
+    .phrase-group h2 {
+      margin:0 0 .35rem;
+      color:var(--navy);
+      font-size:.98rem;
+    }
+
+    .phrase-group ul {
+      margin:.25rem 0 0;
+      padding-left:1.1rem;
+    }
+
+    .phrase-group li {
+      margin:.35rem 0;
+      line-height:1.4;
+    }
+
+    @media (max-width:48rem) {
+      .operator-paths,
+      .phrase-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell unit-shell">
+    <header class="unit-header">
+      <img class="unit-banner" src="../../assets/american-promise-support-header.svg?v=2" alt="The American Promise – Support">
+    </header>
+
+    <h1 class="support-title">Skills training: Argumentative writing</h1>
+
+    <section class="accordion-stack" aria-label="Argumentative-writing support">
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="operator-panel">
+          <span>Before you start: check the operator</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="operator-panel">
+          <aside class="writing-intro">
+            The structure of your argumentative text depends on the operator. Do not use the same pattern automatically for every task.
+          </aside>
+
+          <div class="operator-paths">
+            <div class="operator-path">
+              <strong>comment (on)</strong>
+              Defend a clear position.
+            </div>
+            <div class="operator-path">
+              <strong>discuss</strong>
+              Weigh up both sides.
+            </div>
+            <div class="operator-path">
+              <strong>assess / evaluate</strong>
+              Judge according to relevant criteria.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="planning-panel">
+          <span>Planning</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="planning-panel">
+          <ul class="planning-list">
+            <li>Read the task carefully and identify the exact issue you are expected to address.</li>
+            <li>Decide on your position or, for a discussion, identify the main arguments on both sides.</li>
+            <li>Collect a few strong arguments instead of many superficial ones.</li>
+            <li>Arrange your ideas in a logical order before you start writing.</li>
+          </ul>
+
+          <aside class="writing-tip"><strong>Keep in mind:</strong> Your line of argument should always serve the exact focus of the task.</aside>
+        </div>
+      </article>
+
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="intro-panel">
+          <span>Introduction</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="intro-panel">
+          <div class="structure-stage">
+            <span class="step-number">1</span>
+            <div>
+              <h2>Open the topic</h2>
+              <p>Start with a brief general opening statement that leads into the issue.</p>
+              <div class="opening-options" aria-label="Possible ways to open">
+                <span>relevant context</span>
+                <span>definition of a key term</span>
+                <span>short quotation</span>
+                <span>thought-provoking question</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="structure-stage">
+            <span class="step-number">2</span>
+            <div>
+              <h2>Narrow down the issue</h2>
+              <p>Rephrase the task or central question in your own words and make clear what exactly you are commenting on, discussing or evaluating.</p>
+            </div>
+          </div>
+
+          <div class="structure-stage">
+            <span class="step-number">3</span>
+            <div>
+              <h2>Indicate your direction</h2>
+              <p>For a comment, make your position or argumentative direction clear. For a discussion or evaluation, make clear which issue or criteria will guide your argument.</p>
+            </div>
+          </div>
+
+          <aside class="writing-tip"><strong>Avoid:</strong> “In the following, I am going to comment on …”</aside>
+        </div>
+      </article>
+
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="main-panel">
+          <span>Main part: building strong arguments</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="main-panel">
+          <p>Develop one clear main idea per paragraph. Each paragraph should contribute directly to your overall line of argument.</p>
+
+          <div class="argument-chain" aria-label="Structure of an argumentative paragraph">
+            <span>claim</span><b>→</b><span>explanation</span><b>→</b><span>example / evidence</span><b>→</b><span>link back to the question</span>
+          </div>
+
+          <ul class="writing-list">
+            <li>Start each paragraph with a clear topic sentence.</li>
+            <li>Explain why the point matters instead of merely stating it.</li>
+            <li>Support your argument with relevant examples, facts, knowledge or experience where appropriate.</li>
+            <li>Use linking words to show how your ideas relate to one another.</li>
+            <li>Do not add irrelevant details simply because they appear in the source text.</li>
+          </ul>
+
+          <aside class="writing-tip"><strong>Comment:</strong> Counterarguments can be included and refuted if they strengthen your own position.</aside>
+        </div>
+      </article>
+
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="conclusion-panel">
+          <span>Conclusion</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="conclusion-panel">
+          <ul class="writing-list">
+            <li>Bring your argument to a clear, well-founded conclusion.</li>
+            <li>Restate your central position or judgement in different words.</li>
+            <li>Do not introduce new arguments or evidence.</li>
+            <li>Where appropriate, end with a consequence, recommendation or brief outlook.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="support-card">
+        <button class="reveal-button" type="button" aria-expanded="false" aria-controls="phrases-panel">
+          <span>Helpful phrases</span><span aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content hidden" id="phrases-panel">
+          <p>Use linking phrases selectively. They should make the logic of your argument visible, not replace it.</p>
+
+          <div class="phrase-grid">
+            <div class="phrase-group">
+              <h2>Adding a point</h2>
+              <ul>
+                <li>Moreover, …</li>
+                <li>In addition, …</li>
+              </ul>
+            </div>
+
+            <div class="phrase-group">
+              <h2>Giving an example</h2>
+              <ul>
+                <li>For instance, …</li>
+                <li>This becomes clear when …</li>
+              </ul>
+            </div>
+
+            <div class="phrase-group">
+              <h2>Contrasting ideas</h2>
+              <ul>
+                <li>However, …</li>
+                <li>On the other hand, …</li>
+              </ul>
+            </div>
+
+            <div class="phrase-group">
+              <h2>Concluding</h2>
+              <ul>
+                <li>Ultimately, …</li>
+                <li>In conclusion, …</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.reveal-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        panel.classList.toggle('hidden', isOpen);
+        button.lastElementChild.textContent = isOpen ? '+' : '−';
+      });
+    });
+  </script>
+</body>
+</html>
