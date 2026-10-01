@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173a63">
-  <title>Support overview · The American Promise</title>
+  <title>Exam support · The American Promise</title>
   <link rel="stylesheet" href="../assets/style.css?v=6">
   <style>
     .overview-intro {
-      margin:.9rem 0 1.15rem;
+      margin:.9rem 0 1.2rem;
       padding:.9rem 1rem;
       border-left:.35rem solid var(--red);
       background:#eef2f6;
@@ -16,76 +16,146 @@
       line-height:1.55;
     }
 
-    .support-overview {
-      display:grid;
-      gap:.85rem;
-      margin:0 0 1.5rem;
+    .exam-section {
+      margin:0 0 1.25rem;
+      border:1px solid var(--line);
+      border-radius:.6rem;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 .18rem .55rem rgba(23,58,99,.08);
     }
 
-    .overview-card {
-      display:block;
-      padding:1rem 1.05rem;
+    .exam-heading {
+      display:flex;
+      align-items:center;
+      gap:.8rem;
+      margin:0;
+      padding:.85rem 1rem;
+      background:var(--navy);
+      color:#fff;
+      font-size:1.18rem;
+      line-height:1.25;
+    }
+
+    .exam-section:nth-of-type(2) .exam-heading {
+      background:var(--red);
+    }
+
+    .exam-number {
+      display:grid;
+      place-items:center;
+      flex:0 0 2rem;
+      width:2rem;
+      height:2rem;
+      border-radius:50%;
+      background:#fff;
+      color:var(--navy);
+      font-weight:850;
+    }
+
+    .exam-section:nth-of-type(2) .exam-number {
+      color:var(--red);
+    }
+
+    .exam-body {
+      padding:1rem;
+    }
+
+    .section-note {
+      margin:0 0 .75rem;
+      color:#2f3d4c;
+      line-height:1.5;
+    }
+
+    .operator-label,
+    .support-label {
+      margin:.9rem 0 .5rem;
+      color:var(--navy);
+      font-size:.92rem;
+      font-weight:850;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+    }
+
+    .operator-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:.55rem;
+    }
+
+    .operator-item {
+      padding:.68rem .75rem;
       border:1px solid var(--line);
-      border-top:.28rem solid var(--navy);
-      border-radius:.55rem;
+      border-left:.28rem solid var(--navy);
+      background:#f8fafc;
+      line-height:1.42;
+    }
+
+    .exam-section:nth-of-type(2) .operator-item {
+      border-left-color:var(--red);
+    }
+
+    .operator-item strong {
+      display:block;
+      margin-bottom:.15rem;
+      color:var(--navy);
+    }
+
+    .support-links {
+      display:grid;
+      gap:.65rem;
+    }
+
+    .support-link {
+      display:block;
+      padding:.8rem .9rem;
+      border:1px solid var(--line);
+      border-radius:.48rem;
       background:#fff;
       color:var(--ink);
       text-decoration:none;
-      box-shadow:0 .18rem .55rem rgba(23,58,99,.08);
-      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      transition:transform .15s ease, box-shadow .15s ease;
     }
 
-    .overview-card:nth-child(even) {
-      border-top-color:var(--red);
-    }
-
-    .overview-card:hover,
-    .overview-card:focus-visible {
-      transform:translateY(-2px);
-      box-shadow:0 .35rem .9rem rgba(23,58,99,.14);
+    .support-link:hover,
+    .support-link:focus-visible {
+      transform:translateY(-1px);
+      box-shadow:0 .25rem .65rem rgba(23,58,99,.12);
       outline:none;
     }
 
-    .overview-card:focus-visible {
-      box-shadow:0 0 0 3px rgba(23,58,99,.18), 0 .35rem .9rem rgba(23,58,99,.14);
-    }
-
-    .overview-card h2 {
+    .support-link strong {
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:.8rem;
-      margin:0 0 .35rem;
+      gap:.7rem;
       color:var(--navy);
-      font-size:1.08rem;
-      line-height:1.3;
     }
 
-    .overview-card h2::after {
+    .support-link strong::after {
       content:"›";
-      flex:0 0 auto;
       color:var(--red);
-      font-size:1.55rem;
+      font-size:1.35rem;
       line-height:1;
     }
 
-    .overview-card p {
-      margin:0;
+    .support-link span {
+      display:block;
+      margin-top:.2rem;
       color:#2f3d4c;
-      line-height:1.48;
+      line-height:1.42;
     }
 
-    .overview-card strong {
-      color:var(--navy);
+    .operator-note {
+      margin:.8rem 0 0;
+      color:#566270;
+      font-size:.84rem;
+      line-height:1.45;
     }
 
-    @media (min-width:46rem) {
-      .support-overview {
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
-      .overview-card {
-        min-height:8.8rem;
+    @media (max-width:42rem) {
+      .operator-grid {
+        grid-template-columns:1fr;
       }
     }
   </style>
@@ -96,33 +166,86 @@
       <img class="unit-banner" src="../assets/american-promise-support-header.svg?v=2" alt="Support — The American Promise — Dream. Reality. Responsibility.">
     </header>
 
-    <h1 class="support-title">Support overview</h1>
+    <h1 class="support-title">Support for written exams</h1>
 
     <aside class="overview-intro">
-      Choose the support you need. These pages provide guidance, examples and useful language for analysing texts and developing your own writing.
+      Use the three parts of a typical written exam to find the support you need. The operator overview shows what each task is asking you to do; the linked pages provide more detailed guidance and examples.
     </aside>
 
-    <nav class="support-overview" aria-label="American Promise support pages">
-      <a class="overview-card" href="analysing-speeches/">
-        <h2>Analysing (political) speeches</h2>
-        <p>A comprehensive method sheet covering <strong>context, communicative strategies, tone, stylistic devices, line of argument, delivery and conclusion</strong>.</p>
-      </a>
+    <section class="exam-section">
+      <h2 class="exam-heading"><span class="exam-number">1</span>Comprehension</h2>
+      <div class="exam-body">
+        <p class="section-note">Show that you have understood the text and can present the relevant information clearly and concisely.</p>
 
-      <a class="overview-card" href="line-of-argument/">
-        <h2>Reconstructing the line of argument</h2>
-        <p>Support for identifying <strong>main ideas, connections and the function of individual sections</strong> within an overall argument.</p>
-      </a>
+        <div class="operator-label">Typical operators</div>
+        <div class="operator-grid">
+          <div class="operator-item"><strong>outline</strong>Give the main features, structure or general principles of something.</div>
+          <div class="operator-item"><strong>summarize / sum up</strong>Give a concise account of the main points or ideas.</div>
+          <div class="operator-item"><strong>state</strong>Present the main aspects briefly and clearly.</div>
+          <div class="operator-item"><strong>describe</strong>Give a detailed account of what somebody or something is like.</div>
+        </div>
+      </div>
+    </section>
 
-      <a class="overview-card" href="device-to-argument/">
-        <h2>From device to overall argument</h2>
-        <p>Guidance for moving beyond naming a stylistic device: <strong>identify it, explain its effect and connect it to the speaker’s wider argument</strong>.</p>
-      </a>
+    <section class="exam-section">
+      <h2 class="exam-heading"><span class="exam-number">2</span>Analysis</h2>
+      <div class="exam-body">
+        <p class="section-note">Examine how a text works. Support your findings with suitable evidence and explain how individual aspects contribute to meaning, effect or the overall argument.</p>
 
-      <a class="overview-card" href="letter-to-editor/">
-        <h2>Writing a letter to the editor</h2>
-        <p>Guidance on <strong>purpose, structure, layout and useful language</strong> for writing a concise and persuasive letter to the editor.</p>
-      </a>
-    </nav>
+        <div class="operator-label">Typical operators</div>
+        <div class="operator-grid">
+          <div class="operator-item"><strong>analyse</strong>Describe and explain relevant aspects in detail.</div>
+          <div class="operator-item"><strong>examine</strong>Describe and explain a particular aspect in detail.</div>
+          <div class="operator-item"><strong>explain</strong>Make something clear by giving reasons, details or relevant aspects.</div>
+          <div class="operator-item"><strong>compare</strong>Show relevant similarities and differences.</div>
+          <div class="operator-item"><strong>characterize</strong>Provide a thorough analysis of a character.</div>
+          <div class="operator-item"><strong>interpret</strong>Explain the meaning, purpose or message of something.</div>
+        </div>
+
+        <div class="support-label">Further support</div>
+        <div class="support-links">
+          <a class="support-link" href="analysing-speeches/">
+            <strong>Analysing (political) speeches</strong>
+            <span>Method sheet: context, communicative strategies, tone, stylistic devices, line of argument, delivery and conclusion.</span>
+          </a>
+
+          <a class="support-link" href="line-of-argument/">
+            <strong>Reconstructing the line of argument</strong>
+            <span>Identify main ideas, connections and the function of individual sections within the overall argument.</span>
+          </a>
+
+          <a class="support-link" href="device-to-argument/">
+            <strong>From device to overall argument</strong>
+            <span>Move from identifying a stylistic device to explaining its effect and its contribution to the wider argument.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="exam-section">
+      <h2 class="exam-heading"><span class="exam-number">3</span>Comment / Re-creation of text</h2>
+      <div class="exam-body">
+        <p class="section-note">Develop your own well-founded response or produce a text for a specific communicative situation, purpose and audience.</p>
+
+        <div class="operator-label">Typical operators</div>
+        <div class="operator-grid">
+          <div class="operator-item"><strong>comment (on)</strong>State your opinion clearly and support it with evidence or reasons.</div>
+          <div class="operator-item"><strong>discuss</strong>Give reasons for and against an issue and come to a well-founded conclusion.</div>
+          <div class="operator-item"><strong>assess / evaluate</strong>Express a well-founded opinion on the nature or quality of something.</div>
+          <div class="operator-item"><strong>write (+ text type)</strong>Produce a text with the specific features of the required text type.</div>
+        </div>
+
+        <div class="support-label">Further support</div>
+        <div class="support-links">
+          <a class="support-link" href="letter-to-editor/">
+            <strong>Writing a letter to the editor</strong>
+            <span>Purpose, structure, layout and useful language for a concise and persuasive letter to the editor.</span>
+          </a>
+        </div>
+
+        <p class="operator-note">The operator descriptions follow the NRW operator overview for English used from the 2025 Abitur onwards. The exact requirements always depend on the complete task.</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>
