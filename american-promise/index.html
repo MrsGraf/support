@@ -4,9 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173a63">
-  <title>Exam support · The American Promise</title>
+  <title>Exam Training · The American Promise</title>
   <link rel="stylesheet" href="../assets/style.css?v=6">
   <style>
+    :root {
+      --comp:#315f8e;
+      --comp-soft:#edf3f8;
+      --analysis:#a7353d;
+      --analysis-soft:#f7ecee;
+      --production:#2f706b;
+      --production-soft:#eaf4f2;
+    }
+
     .overview-intro {
       margin:.9rem 0 1.2rem;
       padding:.9rem 1rem;
@@ -17,12 +26,29 @@
     }
 
     .exam-section {
-      margin:0 0 1.25rem;
+      --section-color:var(--navy);
+      --section-soft:#eef2f6;
+      margin:0 0 1.35rem;
       border:1px solid var(--line);
-      border-radius:.6rem;
+      border-radius:.65rem;
       overflow:hidden;
       background:#fff;
       box-shadow:0 .18rem .55rem rgba(23,58,99,.08);
+    }
+
+    .exam-section.comprehension {
+      --section-color:var(--comp);
+      --section-soft:var(--comp-soft);
+    }
+
+    .exam-section.analysis {
+      --section-color:var(--analysis);
+      --section-soft:var(--analysis-soft);
+    }
+
+    .exam-section.production {
+      --section-color:var(--production);
+      --section-soft:var(--production-soft);
     }
 
     .exam-heading {
@@ -30,15 +56,11 @@
       align-items:center;
       gap:.8rem;
       margin:0;
-      padding:.85rem 1rem;
-      background:var(--navy);
+      padding:.88rem 1rem;
+      background:var(--section-color);
       color:#fff;
       font-size:1.18rem;
       line-height:1.25;
-    }
-
-    .exam-section:nth-of-type(2) .exam-heading {
-      background:var(--red);
     }
 
     .exam-number {
@@ -49,12 +71,8 @@
       height:2rem;
       border-radius:50%;
       background:#fff;
-      color:var(--navy);
+      color:var(--section-color);
       font-weight:850;
-    }
-
-    .exam-section:nth-of-type(2) .exam-number {
-      color:var(--red);
     }
 
     .exam-body {
@@ -62,19 +80,63 @@
     }
 
     .section-note {
-      margin:0 0 .75rem;
+      margin:0 0 .9rem;
       color:#2f3d4c;
       line-height:1.5;
     }
 
-    .operator-label,
-    .support-label {
-      margin:.9rem 0 .5rem;
-      color:var(--navy);
-      font-size:.92rem;
+    .operator-box {
+      margin:.9rem 0 1rem;
+      padding:.9rem;
+      border:1px solid #d9dee4;
+      border-left:.4rem solid var(--section-color);
+      border-radius:.58rem;
+      background:var(--section-soft);
+    }
+
+    .operator-header {
+      display:flex;
+      align-items:center;
+      gap:.65rem;
+      margin:0 0 .28rem;
+    }
+
+    .operator-icon {
+      display:grid;
+      place-items:center;
+      flex:0 0 2rem;
+      width:2rem;
+      height:2rem;
+      border-radius:50%;
+      background:#fff;
+      color:var(--section-color);
+      border:1px solid #d9dee4;
+    }
+
+    .operator-icon svg {
+      width:1.16rem;
+      height:1.16rem;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.9;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .operator-title {
+      margin:0;
+      color:var(--section-color);
+      font-size:.98rem;
       font-weight:850;
-      letter-spacing:.03em;
+      letter-spacing:.035em;
       text-transform:uppercase;
+    }
+
+    .operator-intro {
+      margin:0 0 .72rem 2.65rem;
+      color:#43505d;
+      font-size:.9rem;
+      line-height:1.45;
     }
 
     .operator-grid {
@@ -85,20 +147,26 @@
 
     .operator-item {
       padding:.68rem .75rem;
-      border:1px solid var(--line);
-      border-left:.28rem solid var(--navy);
-      background:#f8fafc;
+      border:1px solid rgba(70,85,100,.16);
+      border-top:.22rem solid var(--section-color);
+      border-radius:.38rem;
+      background:#fff;
       line-height:1.42;
-    }
-
-    .exam-section:nth-of-type(2) .operator-item {
-      border-left-color:var(--red);
     }
 
     .operator-item strong {
       display:block;
       margin-bottom:.15rem;
-      color:var(--navy);
+      color:var(--section-color);
+    }
+
+    .support-label {
+      margin:1rem 0 .5rem;
+      color:var(--section-color);
+      font-size:.92rem;
+      font-weight:850;
+      letter-spacing:.03em;
+      text-transform:uppercase;
     }
 
     .support-links {
@@ -110,6 +178,7 @@
       display:block;
       padding:.8rem .9rem;
       border:1px solid var(--line);
+      border-left:.28rem solid var(--section-color);
       border-radius:.48rem;
       background:#fff;
       color:var(--ink);
@@ -129,12 +198,12 @@
       align-items:center;
       justify-content:space-between;
       gap:.7rem;
-      color:var(--navy);
+      color:var(--section-color);
     }
 
     .support-link strong::after {
       content:"›";
-      color:var(--red);
+      color:var(--section-color);
       font-size:1.35rem;
       line-height:1;
     }
@@ -154,9 +223,8 @@
     }
 
     @media (max-width:42rem) {
-      .operator-grid {
-        grid-template-columns:1fr;
-      }
+      .operator-grid { grid-template-columns:1fr; }
+      .operator-intro { margin-left:0; }
     }
   </style>
 </head>
@@ -166,40 +234,64 @@
       <img class="unit-banner" src="../assets/american-promise-support-header.svg?v=2" alt="Support — The American Promise — Dream. Reality. Responsibility.">
     </header>
 
-    <h1 class="support-title">Support for written exams</h1>
+    <h1 class="support-title">Exam Training</h1>
 
     <aside class="overview-intro">
       Use the three parts of a typical written exam to find the support you need. The operator overview shows what each task is asking you to do; the linked pages provide more detailed guidance and examples.
     </aside>
 
-    <section class="exam-section">
+    <section class="exam-section comprehension">
       <h2 class="exam-heading"><span class="exam-number">1</span>Comprehension</h2>
       <div class="exam-body">
         <p class="section-note">Show that you have understood the text and can present the relevant information clearly and concisely.</p>
 
-        <div class="operator-label">Typical operators</div>
-        <div class="operator-grid">
-          <div class="operator-item"><strong>outline</strong>Give the main features, structure or general principles of something.</div>
-          <div class="operator-item"><strong>summarize / sum up</strong>Give a concise account of the main points or ideas.</div>
-          <div class="operator-item"><strong>state</strong>Present the main aspects briefly and clearly.</div>
-          <div class="operator-item"><strong>describe</strong>Give a detailed account of what somebody or something is like.</div>
+        <div class="operator-box">
+          <div class="operator-header">
+            <span class="operator-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="4" width="14" height="16" rx="2"></rect>
+                <path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4.5"></path>
+              </svg>
+            </span>
+            <h3 class="operator-title">Operators</h3>
+          </div>
+          <p class="operator-intro">These task words show what you are expected to do in this part of the exam.</p>
+
+          <div class="operator-grid">
+            <div class="operator-item"><strong>outline</strong>Give the main features, structure or general principles of something.</div>
+            <div class="operator-item"><strong>summarize / sum up</strong>Give a concise account of the main points or ideas.</div>
+            <div class="operator-item"><strong>state</strong>Present the main aspects briefly and clearly.</div>
+            <div class="operator-item"><strong>describe</strong>Give a detailed account of what somebody or something is like.</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="exam-section">
+    <section class="exam-section analysis">
       <h2 class="exam-heading"><span class="exam-number">2</span>Analysis</h2>
       <div class="exam-body">
         <p class="section-note">Examine how a text works. Support your findings with suitable evidence and explain how individual aspects contribute to meaning, effect or the overall argument.</p>
 
-        <div class="operator-label">Typical operators</div>
-        <div class="operator-grid">
-          <div class="operator-item"><strong>analyse</strong>Describe and explain relevant aspects in detail.</div>
-          <div class="operator-item"><strong>examine</strong>Describe and explain a particular aspect in detail.</div>
-          <div class="operator-item"><strong>explain</strong>Make something clear by giving reasons, details or relevant aspects.</div>
-          <div class="operator-item"><strong>compare</strong>Show relevant similarities and differences.</div>
-          <div class="operator-item"><strong>characterize</strong>Provide a thorough analysis of a character.</div>
-          <div class="operator-item"><strong>interpret</strong>Explain the meaning, purpose or message of something.</div>
+        <div class="operator-box">
+          <div class="operator-header">
+            <span class="operator-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="4" width="14" height="16" rx="2"></rect>
+                <path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4.5"></path>
+              </svg>
+            </span>
+            <h3 class="operator-title">Operators</h3>
+          </div>
+          <p class="operator-intro">These task words show what you are expected to do in this part of the exam.</p>
+
+          <div class="operator-grid">
+            <div class="operator-item"><strong>analyse</strong>Describe and explain relevant aspects in detail.</div>
+            <div class="operator-item"><strong>examine</strong>Describe and explain a particular aspect in detail.</div>
+            <div class="operator-item"><strong>explain</strong>Make something clear by giving reasons, details or relevant aspects.</div>
+            <div class="operator-item"><strong>compare</strong>Show relevant similarities and differences.</div>
+            <div class="operator-item"><strong>characterize</strong>Provide a thorough analysis of a character.</div>
+            <div class="operator-item"><strong>interpret</strong>Explain the meaning, purpose or message of something.</div>
+          </div>
         </div>
 
         <div class="support-label">Further support</div>
@@ -208,12 +300,10 @@
             <strong>Analysing (political) speeches</strong>
             <span>Method sheet: context, communicative strategies, tone, stylistic devices, line of argument, delivery and conclusion.</span>
           </a>
-
           <a class="support-link" href="line-of-argument/">
             <strong>Reconstructing the line of argument</strong>
             <span>Identify main ideas, connections and the function of individual sections within the overall argument.</span>
           </a>
-
           <a class="support-link" href="device-to-argument/">
             <strong>From device to overall argument</strong>
             <span>Move from identifying a stylistic device to explaining its effect and its contribution to the wider argument.</span>
@@ -222,17 +312,31 @@
       </div>
     </section>
 
-    <section class="exam-section">
+    <section class="exam-section production">
       <h2 class="exam-heading"><span class="exam-number">3</span>Comment / Re-creation of text</h2>
       <div class="exam-body">
         <p class="section-note">Develop your own well-founded response or produce a text for a specific communicative situation, purpose and audience.</p>
 
-        <div class="operator-label">Typical operators</div>
-        <div class="operator-grid">
-          <div class="operator-item"><strong>comment (on)</strong>State your opinion clearly and support it with evidence or reasons.</div>
-          <div class="operator-item"><strong>discuss</strong>Give reasons for and against an issue and come to a well-founded conclusion.</div>
-          <div class="operator-item"><strong>assess / evaluate</strong>Express a well-founded opinion on the nature or quality of something.</div>
-          <div class="operator-item"><strong>write (+ text type)</strong>Produce a text with the specific features of the required text type.</div>
+        <div class="operator-box">
+          <div class="operator-header">
+            <span class="operator-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="4" width="14" height="16" rx="2"></rect>
+                <path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4.5"></path>
+              </svg>
+            </span>
+            <h3 class="operator-title">Operators</h3>
+          </div>
+          <p class="operator-intro">These task words show what you are expected to do in this part of the exam.</p>
+
+          <div class="operator-grid">
+            <div class="operator-item"><strong>comment (on)</strong>State your opinion clearly and support it with evidence or reasons.</div>
+            <div class="operator-item"><strong>discuss</strong>Give reasons for and against an issue and come to a well-founded conclusion.</div>
+            <div class="operator-item"><strong>assess / evaluate</strong>Express a well-founded opinion on the nature or quality of something.</div>
+            <div class="operator-item"><strong>write (+ text type)</strong>Produce a text with the specific features of the required text type.</div>
+          </div>
+
+          <p class="operator-note">The operator descriptions follow the NRW operator overview for English used from the 2025 Abitur onwards. The exact requirements always depend on the complete task.</p>
         </div>
 
         <div class="support-label">Further support</div>
@@ -242,8 +346,6 @@
             <span>Purpose, structure, layout and useful language for a concise and persuasive letter to the editor.</span>
           </a>
         </div>
-
-        <p class="operator-note">The operator descriptions follow the NRW operator overview for English used from the 2025 Abitur onwards. The exact requirements always depend on the complete task.</p>
       </div>
     </section>
   </main>
