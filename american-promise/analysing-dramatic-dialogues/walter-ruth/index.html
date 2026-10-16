@@ -75,7 +75,7 @@ ol{padding-left:1.4rem}li{margin:.48rem 0}li::marker{color:var(--red);font-weigh
 <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5C9 3 6 3 3 4v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1ZM12 5v15"/></symbol>
 <symbol id="i-hint" viewBox="0 0 24 24"><path d="M9 18h6m-5 3h4m-5-5a7 7 0 1 1 6 0c-1 .7-1 1.3-1 2h-4c0-.7 0-1.3-1-2Z"/></symbol>
 </svg>
-<header class="top"><img src="../../assets/american-promise-support-header.svg?v=2" alt="The American Promise — Dream. Reality. Responsibility."></header>
+<header class="top"><img src="../../../assets/american-promise-support-header.svg?v=2" alt="The American Promise — Dream. Reality. Responsibility."></header>
 <div class="drama-header"><div class="drama-inner"><div class="script">Drama – A Raisin in the Sun</div><h1>Understanding Drama: Analysing Dramatic Dialogues</h1></div></div>
 <div class="wrap">
 <header class="identity">
@@ -171,17 +171,17 @@ ol{padding-left:1.4rem}li{margin:.48rem 0}li::marker{color:var(--red);font-weigh
 (function(){
 let current=0;
 const sections=[...document.querySelectorAll('.step')],tabs=[...document.querySelectorAll('.nav button')],dots=[...document.querySelectorAll('.progress button')],prev=document.querySelector('#prev'),next=document.querySelector('#next');
-function show(n){
+function show(n,doScroll=true){
 current=Math.max(0,Math.min(3,n));
 sections.forEach((el,i)=>{const on=i===current;el.classList.toggle('active',on);el.hidden=!on;});
 tabs.forEach((el,i)=>{const on=i===current;el.classList.toggle('active',on);el.setAttribute('aria-selected',String(on));});
 dots.forEach((el,i)=>el.classList.toggle('current',i===current));
 prev.hidden=current===0;next.hidden=current===3;
-document.querySelector('.paper').scrollIntoView({behavior:'smooth',block:'start'});
+if(doScroll) document.querySelector('.paper').scrollIntoView({behavior:'smooth',block:'start'});
 }
 [...tabs,...dots].forEach(el=>el.addEventListener('click',()=>show(+el.dataset.step)));
 prev.addEventListener('click',()=>show(current-1));next.addEventListener('click',()=>show(current+1));
-show(0);
+show(0,false);
 })();
 </script>
 </body></html>
