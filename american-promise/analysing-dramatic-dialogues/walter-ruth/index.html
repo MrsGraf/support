@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#173a63">
+<title>Analysis Map 01 · Walter &amp; Ruth | The American Promise</title>
+<meta name="description" content="A guided close reading of Walter and Ruth's dialogue from Act I, Scene I of A Raisin in the Sun.">
+<style>
+:root{--navy:#15365d;--red:#ae3034;--ink:#203148;--muted:#526273;--line:#d8dfe5;--paper:#fff;--background:#f7f7f5;--cream:#eeeadd;--pale:#edf2f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--background);color:var(--ink);font:16px/1.58 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+button{font:inherit;cursor:pointer}a{color:var(--navy)}.top{background:#fff;border-bottom:1px solid #e4e6e7}
+.top img{display:block;width:100%;max-height:300px;object-fit:contain}
+.drama-header{position:relative;background:#fff;border-bottom:3px solid var(--red)}
+.drama-header:after{content:"";height:2px;background:var(--red);width:10%;position:absolute;bottom:-3px;right:0}
+.drama-inner{max-width:1200px;margin:auto;padding:20px 25px 24px}
+.script{font:italic clamp(1.3rem,2.9vw,2.3rem) "Brush Script MT","Segoe Script",cursive;color:#60656a}
+.drama-inner h1{font-size:clamp(1.25rem,3vw,2.55rem);letter-spacing:-.045em;color:#101419;margin:.15rem 0 0;line-height:1.18;font-weight:850}
+.kicker{color:var(--red);font-weight:800;letter-spacing:.15em;text-transform:uppercase;font-size:.7rem}
+.wrap{max-width:1200px;margin:auto;padding:27px 25px 75px}
+.identity{display:flex;justify-content:space-between;gap:25px;align-items:center;padding:21px 26px;background:var(--paper);border:1px solid var(--line);border-radius:7px;box-shadow:0 4px 14px #1232520a;margin-bottom:18px}
+.identity h2{margin:0;font-size:clamp(1.5rem,2.5vw,2.2rem);color:var(--navy)}
+.identity p{margin:.2rem 0;color:var(--muted)}.identity .small{font-size:.83rem}
+.roundel{background:var(--cream);border:1px solid #dcd7c6;color:var(--navy);flex:none;min-width:87px;text-align:center;padding:12px 8px;font-weight:900;border-radius:4px}
+.roundel b{display:block;color:var(--red);font-size:2.4rem;line-height:1}
+.main{display:grid;grid-template-columns:244px minmax(0,1fr);gap:19px;align-items:start}
+.aside{position:sticky;top:16px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;padding:17px 12px}
+.aside strong{display:block;padding:0 10px 10px;font-size:.85rem;color:var(--navy)}
+.nav{display:grid;gap:5px}
+.nav button{width:100%;text-align:left;display:flex;align-items:center;gap:10px;border:0;border-radius:5px;padding:11px 9px;background:transparent;color:var(--ink)}
+.nav button.active{background:var(--pale);box-shadow:inset 4px 0 var(--red);font-weight:750}
+.nav .symbol{display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#f0f0eb;border:1px solid #dde1e3;border-radius:6px;flex:none}
+.nav .active .symbol{background:var(--navy);color:white}
+svg.icon{width:19px;height:19px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.aside p{font-size:.78rem;color:var(--muted);margin:14px 10px 0}
+.paper{background:white;border:1px solid var(--line);border-radius:7px;padding:clamp(20px,3vw,40px);min-height:560px;box-shadow:0 6px 24px #163c5b0a}
+.step{display:none}.step.active{display:block;animation:appear .2s ease}@keyframes appear{from{opacity:.75;transform:translateY(5px)}to{opacity:1;transform:none}}
+.heading{display:flex;align-items:center;gap:17px;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:23px}
+.ico-block{background:var(--cream);border-bottom:3px solid var(--red);border-radius:4px;min-width:87px;min-height:82px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--navy);gap:3px}
+.ico-block svg{height:34px;width:34px}.ico-block span{font-size:.64rem;letter-spacing:.12em;font-weight:800}
+.eyebrow{color:var(--red);font-size:.7rem;text-transform:uppercase;letter-spacing:.13em;font-weight:850}
+.heading h2{font-size:clamp(1.45rem,2.5vw,2rem);margin:3px 0 0;line-height:1.16;color:var(--navy)}
+.heading p{margin:3px 0 0;color:var(--muted)}
+.prose{max-width:800px}.prose p{margin:.75rem 0 1rem}
+.section{padding:14px 0}.section h3{font-size:1.15rem;color:var(--navy);margin:.3rem 0 .5rem}
+.section h4{font-size:.9rem;letter-spacing:.05em;color:var(--navy);margin:1rem 0 .45rem}
+.ref{display:inline-flex;align-items:center;gap:7px;color:var(--navy);background:#edf2f7;border:1px solid #d9e3ea;border-radius:3px;padding:5px 10px;font-size:.78rem;font-weight:700}
+ol{padding-left:1.4rem}li{margin:.48rem 0}li::marker{color:var(--red);font-weight:700}
+.method{border-left:4px solid var(--navy);background:#f1f4f6;padding:15px 18px;border-radius:3px;margin:18px 0}
+.method b{color:var(--navy)}.guided{border:1px solid #e3e0d8;background:#faf9f5;padding:20px;border-radius:5px;margin:17px 0}
+.guided h3{margin-top:0;color:var(--navy)}
+.details{margin:12px 0;border:1px solid var(--line);border-radius:4px;background:#fff}
+.details summary{cursor:pointer;list-style:none;padding:12px 15px;display:flex;gap:9px;align-items:center;font-weight:700;font-size:.91rem;color:var(--navy)}
+.details summary::-webkit-details-marker{display:none}.details summary:after{content:"+";margin-left:auto;color:var(--red);font-size:1.3rem;line-height:1}
+.details[open] summary:after{content:"−"}.details>div{padding:2px 15px 14px;color:var(--ink);font-size:.91rem}
+.marker{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:800}
+.note{display:flex;align-items:flex-start;gap:9px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line);padding-top:15px;margin-top:26px}
+.note svg{flex:none}.progress{display:flex;gap:7px;margin:20px 0 0}.progress button{flex:1;height:7px;border:0;background:#dce1e6;border-radius:5px}.progress button.current{background:var(--red)}
+.controls{display:flex;justify-content:space-between;gap:12px;margin-top:25px}
+.controls button{padding:10px 16px;border-radius:4px;border:1px solid var(--navy);background:#fff;color:var(--navy);font-weight:700}
+.controls .next{background:var(--navy);color:#fff;margin-left:auto}
+.homework{background:#f7f1e8;border-left:5px solid var(--red);padding:16px 20px;margin:15px 0}
+.strong{font-weight:750;color:var(--navy)}
+@media(max-width:800px){.main{grid-template-columns:1fr}.aside{position:static}.aside strong,.aside p{display:none}.nav{grid-template-columns:repeat(4,minmax(0,1fr))}.nav button{flex-direction:column;gap:5px;padding:7px 2px;text-align:center;font-size:.73rem}.nav .symbol{width:35px;height:35px}.paper{min-height:0}}
+@media(max-width:510px){.wrap{padding:15px 13px 50px}.drama-inner{padding:12px 16px 17px}.paper{padding:20px 17px}.identity{padding:16px}.roundel{min-width:58px}.roundel b{font-size:1.8rem}.heading{gap:12px}.ico-block{min-width:56px;min-height:65px}.ico-block svg{width:25px;height:25px}.nav button{font-size:.68rem}}
+@media print{.aside,.controls,.progress{display:none}.main{display:block}.paper{box-shadow:none;border:0}.step{display:block!important;break-after:page}.top img{max-height:170px}.wrap{padding:0}.details>div{display:block}}
+</style>
+</head>
+<body>
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+<symbol id="i-talk" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 1-8 8 9 9 0 0 1-4-.9L3 20l1.5-4A8 8 0 1 1 20 11Z"/><path d="M8 10h8M9 13h6"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M8 10.5h5"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20h18M5 17l5-6 4 3 6-8M16 6h4v4"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24"><path d="M6 4h11v16H6zM9 9h5M9 12h5M9 15h4M18 15l3 3-3 3"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5C9 3 6 3 3 4v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1ZM12 5v15"/></symbol>
+<symbol id="i-hint" viewBox="0 0 24 24"><path d="M9 18h6m-5 3h4m-5-5a7 7 0 1 1 6 0c-1 .7-1 1.3-1 2h-4c0-.7 0-1.3-1-2Z"/></symbol>
+</svg>
+<header class="top"><img src="../../assets/american-promise-support-header.svg?v=2" alt="The American Promise — Dream. Reality. Responsibility."></header>
+<div class="drama-header"><div class="drama-inner"><div class="script">Drama – A Raisin in the Sun</div><h1>Understanding Drama: Analysing Dramatic Dialogues</h1></div></div>
+<div class="wrap">
+<header class="identity">
+<div><div class="kicker">Dialogue Analysis Map · Group 01</div><h2>Walter &amp; Ruth</h2><p>When Dreams Meet Everyday Life</p><p class="small">Act I, Scene I · pp. 8–10 · annotated drama edition</p></div>
+<div class="roundel">GROUP<b>01</b></div>
+</header>
+<div class="main">
+<aside class="aside" aria-label="Checkpoint navigation">
+<strong>Your Analysis Route</strong>
+<div class="nav" role="tablist" aria-label="Analysis checkpoints">
+<button type="button" role="tab" data-step="0" class="active" aria-selected="true"><span class="symbol"><svg class="icon"><use href="#i-talk"></use></svg></span><span>01 · Conflict</span></button>
+<button type="button" role="tab" data-step="1" aria-selected="false"><span class="symbol"><svg class="icon"><use href="#i-search"></use></svg></span><span>02 · Interaction</span></button>
+<button type="button" role="tab" data-step="2" aria-selected="false"><span class="symbol"><svg class="icon"><use href="#i-chart"></use></svg></span><span>03 · Development</span></button>
+<button type="button" role="tab" data-step="3" aria-selected="false"><span class="symbol"><svg class="icon"><use href="#i-share"></use></svg></span><span>04 · Transfer</span></button>
+</div>
+<p>Work with your annotated play in GoodNotes. Record your observations and evidence there; no typing on this website.</p>
+</aside>
+<main class="paper">
+<section class="step active" id="s1" role="tabpanel">
+<div class="heading"><div class="ico-block"><svg class="icon"><use href="#i-talk"></use></svg><span>01 / 04</span></div><div><div class="eyebrow">What is said?</div><h2>Understanding the conflict</h2><p>Before examining techniques, establish what is at stake.</p></div></div>
+<div class="prose">
+<p>A dramatic dialogue is not simply a collection of individual statements. Its meaning often emerges from <strong>how one character responds to another</strong>. As you read, look for the difference between a character's immediate concerns and what they ultimately hope to achieve.</p>
+<div class="ref"><svg class="icon"><use href="#i-book"></use></svg> Act I, Scene I · pp. 8, l. 15 – 10, l. 35</div>
+<div class="section"><h3>Start with the scene</h3><ol>
+<li>What is Walter trying to achieve, and why is this so important to him?</li>
+<li>What is Ruth primarily concerned about? What does she expect from Walter in this conversation?</li>
+<li>Where do their expectations clash? Distinguish the <strong>immediate disagreement</strong> from the <strong>deeper underlying conflict</strong>.</li>
+</ol></div>
+<details class="details"><summary><svg class="icon"><use href="#i-hint"></use></svg>Need a starting point?</summary><div>Ask yourself: What does Walter want Ruth to engage with? What practical concerns keep drawing Ruth's attention? Consider what these priorities reveal about their different situations, rather than simply labelling either character as right or wrong.</div></details>
+<div class="method"><b>From observation to interpretation:</b> The important question is not only <em>what</em> they disagree about, but <em>why</em> they seem unable to understand each other's position.</div>
+</div></section>
+
+<section class="step" id="s2" role="tabpanel" hidden>
+<div class="heading"><div class="ico-block"><svg class="icon"><use href="#i-search"></use></svg><span>02 / 04</span></div><div><div class="eyebrow">How is it said?</div><h2>Examining interaction &amp; language</h2><p>Two guided close readings — then make your own observations.</p></div></div>
+<div class="prose">
+<p>The way a conversation unfolds can tell the audience as much as the words themselves. Pay attention to who speaks, how the other person responds and how <strong>language and stage directions work together</strong>.</p>
+<div class="guided"><h3>Close Reading A · Who gets heard?</h3>
+<div class="ref"><svg class="icon"><use href="#i-book"></use></svg> p. 8, ll. 18–35</div>
+<p><b>Turn-taking</b> describes how speaking turns are distributed and how the speakers respond to each other. Notice who speaks at length, who answers briefly and whether the characters engage with one another's concerns.</p>
+<div class="marker">Name it → Prove it → Explain it</div>
+<ol><li><b>Name it:</b> Compare Walter's and Ruth's contributions. What differences do you notice in their length, content and responses?</li>
+<li><b>Prove it:</b> Identify one revealing sequence of speaking turns and provide precise line references.</li>
+<li><b>Explain it:</b> What does this pattern reveal about their priorities and their relationship? How does it contribute to the growing tension?</li></ol>
+<details class="details"><summary><svg class="icon"><use href="#i-hint"></use></svg>How do I analyse turn-taking?</summary><div>Avoid writing only “There is turn-taking.” Explain a <em>pattern</em> and its function. For example: <em>While X speaks at length about …, Y responds by … . This contrasting pattern of turn-taking highlights …</em></div></details>
+</div>
+<div class="guided"><h3>Close Reading B · When ordinary words gain weight</h3>
+<div class="ref"><svg class="icon"><use href="#i-book"></use></svg> p. 9, ll. 33–38 &amp; p. 10, ll. 1–16</div>
+<p>A repeated everyday phrase can acquire additional meaning as a conversation becomes more tense. Its <b>subtext</b> may be shaped by the situation, reactions and changes in tone.</p>
+<ol><li><b>Name it:</b> What is striking about the recurring reference to the eggs?</li>
+<li><b>Prove it:</b> Compare at least two moments when eggs are mentioned. Include relevant stage directions.</li>
+<li><b>Explain it:</b> How does the significance of this seemingly ordinary topic change during the exchange? What does it suggest about their relationship?</li></ol>
+<details class="details"><summary><svg class="icon"><use href="#i-hint"></use></svg>Look beyond the literal meaning</summary><div>Ask what each character is really reacting to. Do not assume that “eggs” is an English idiom for courage or masculinity. The additional meaning emerges from the dialogue, not from a fixed expression.</div></details>
+</div>
+<div class="method"><b>Your turn:</b> Find <strong>two further revealing moments</strong> in the passage. Consider a response, word choice, gesture, shift in tone or stage direction. Explain what each reveals; do not simply list techniques.</div>
+</div></section>
+
+<section class="step" id="s3" role="tabpanel" hidden>
+<div class="heading"><div class="ico-block"><svg class="icon"><use href="#i-chart"></use></svg><span>03 / 04</span></div><div><div class="eyebrow">How does it develop?</div><h2>Tracing dramatic progression</h2><p>Follow the exchange as an evolving conflict.</p></div></div>
+<div class="prose">
+<p>A conversation can become more confrontational through a series of responses, rather than through a single dramatic statement. <b>Escalation</b> means that the tension or intensity of the conflict increases. A <b>turning point</b> is a moment when the direction or dynamics of the exchange change significantly.</p>
+<div class="section"><h3>Map the conversation</h3>
+<ol><li>How does the discussion begin? What is the immediate topic?</li>
+<li>Where does the interaction become more tense? Identify a specific response, line or stage direction that marks a change.</li>
+<li>How does Walter react as he feels increasingly unheard? How does Ruth respond?</li>
+<li>How does the conversation end? Does either character seem to have achieved what they wanted?</li></ol></div>
+<div class="method"><b>Make connections:</b> Return to your observations about turn-taking, repetition, tone and stage directions. Explain <em>how these features work together</em> to develop the conflict.</div>
+<details class="details"><summary><svg class="icon"><use href="#i-hint"></use></svg>What if there is no single turning point?</summary><div>That is fine. Not every dialogue contains a clearly identifiable turning point. You may trace a gradual change in tension instead. Support whichever interpretation fits the text best.</div></details>
+</div></section>
+
+<section class="step" id="s4" role="tabpanel" hidden>
+<div class="heading"><div class="ico-block"><svg class="icon"><use href="#i-share"></use></svg><span>04 / 04</span></div><div><div class="eyebrow">Step back &amp; teach</div><h2>From your scene to drama analysis</h2><p>Bring together your findings and prepare the insight other groups need.</p></div></div>
+<div class="prose">
+<div class="homework"><b>HOMEWORK · Prepare for Thursday</b><br>Complete the analysis and prepare to explain your group's findings. Record your notes and textual evidence in GoodNotes.</div>
+<div class="section"><h3>Part A · What is this conflict really about?</h3>
+<p>Bring your findings together in a focused interpretation:</p>
+<ol><li>What is the <strong>underlying conflict</strong> between Walter and Ruth, beyond their immediate disagreement?</li>
+<li>How does Hansberry make this conflict visible through <strong>interaction, use of language and stage directions</strong>?</li>
+<li>How does their communication change during the conversation?</li></ol></div>
+<div class="section"><h3>Part B · Your transferable insight</h3><p>Your classmates analysed different dialogues. Teach them a technique they can apply to other scenes.</p>
+<ol><li>Choose <strong>one particularly instructive aspect</strong> of your analysis: turn-taking, repetition or subtext.</li>
+<li>Select <strong>two short, revealing examples</strong> from your scene (with page and line references).</li>
+<li>Explain <b>how you moved from observing the feature to interpreting its dramatic function</b>.</li>
+<li>Formulate one general question your classmates should ask when analysing a new dialogue.</li></ol></div>
+<details class="details"><summary><svg class="icon"><use href="#i-hint"></use></svg>Useful structure for your explanation</summary><div><em>In our scene, Hansberry uses … to reveal … . We noticed this in … (p. …, ll. …). What other groups can learn from this is … . When analysing a new dialogue, it is worth asking … .</em></div></details>
+<div class="method"><b>Ready for the group exchange?</b> You should be able to explain <b>what</b> this particular conflict is about, <b>how</b> Hansberry presents it and <b>what analytical strategy</b> the other groups can take away.</div>
+</div></section>
+
+<div class="note"><svg class="icon"><use href="#i-book"></use></svg><span>This page guides your reading. Work on the annotated play in GoodNotes; the website does not collect or store your responses.</span></div>
+<div class="progress" aria-label="Checkpoints"><button type="button" data-step="0" class="current" aria-label="Checkpoint 1"></button><button type="button" data-step="1" aria-label="Checkpoint 2"></button><button type="button" data-step="2" aria-label="Checkpoint 3"></button><button type="button" data-step="3" aria-label="Checkpoint 4"></button></div>
+<div class="controls"><button type="button" id="prev">← Previous</button><button type="button" class="next" id="next">Next checkpoint →</button></div>
+</main></div></div>
+<script>
+(function(){
+let current=0;
+const sections=[...document.querySelectorAll('.step')],tabs=[...document.querySelectorAll('.nav button')],dots=[...document.querySelectorAll('.progress button')],prev=document.querySelector('#prev'),next=document.querySelector('#next');
+function show(n){
+current=Math.max(0,Math.min(3,n));
+sections.forEach((el,i)=>{const on=i===current;el.classList.toggle('active',on);el.hidden=!on;});
+tabs.forEach((el,i)=>{const on=i===current;el.classList.toggle('active',on);el.setAttribute('aria-selected',String(on));});
+dots.forEach((el,i)=>el.classList.toggle('current',i===current));
+prev.hidden=current===0;next.hidden=current===3;
+document.querySelector('.paper').scrollIntoView({behavior:'smooth',block:'start'});
+}
+[...tabs,...dots].forEach(el=>el.addEventListener('click',()=>show(+el.dataset.step)));
+prev.addEventListener('click',()=>show(current-1));next.addEventListener('click',()=>show(current+1));
+show(0);
+})();
+</script>
+</body></html>
