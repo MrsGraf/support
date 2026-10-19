@@ -44,7 +44,7 @@
         </button>
         <div class="accordion-content hidden" id="basics-panel">
           <div class="med-image-wrap">
-            <img id="mediation-basics-image" class="med-image" loading="lazy" alt="How to Mediation – overview of task focus, addressee, text format and six mediation strategies">
+            <img class="med-image" src="mediation-basics-v2.webp?v=3" loading="lazy" alt="How to Mediation – overview of task focus, addressee, text format and six mediation strategies">
           </div>
         </div>
       </article>
@@ -114,22 +114,6 @@
   </main>
 
   <script>
-    (async () => {
-      const image = document.getElementById('mediation-basics-image');
-      try {
-        const files = ['part0.txt','part1.txt','part2a.txt','part2b.txt','part3.txt','part4.txt','part5.txt'];
-        const parts = await Promise.all(files.map((name) =>
-          fetch('image-data/' + name + '?v=2').then((response) => {
-            if (!response.ok) throw new Error('Could not load image data.');
-            return response.text();
-          })
-        ));
-        image.src = 'data:image/webp;base64,' + parts.join('');
-      } catch (error) {
-        image.alt = 'The mediation overview image could not be loaded.';
-      }
-    })();
-
     document.querySelectorAll('.reveal-button').forEach((button) => {
       button.addEventListener('click', () => {
         const panel = document.getElementById(button.getAttribute('aria-controls'));
