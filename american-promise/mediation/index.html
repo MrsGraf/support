@@ -18,8 +18,11 @@
     .speech-step:nth-child(3) .speech-number{background:#557aa1}
     .speech-step h2{margin:.05rem 0 .35rem!important;color:var(--navy)!important;font-size:1.05rem!important}
     .speech-step p{margin:.28rem 0;color:var(--ink);line-height:1.5}
-    .phrase-line{margin-top:.65rem;padding:.65rem .75rem;border-left:.28rem solid var(--blue);background:#fff;color:#2f3d4c;line-height:1.5}
-    .phrase-line strong{display:block;margin-bottom:.3rem;color:var(--navy)}
+    .phrase-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:.65rem;padding:.58rem .72rem;border:1px solid #cfd8e2;border-left:.28rem solid var(--blue);border-radius:.38rem;background:#fff;color:var(--navy);font:inherit;font-weight:750;text-align:left;cursor:pointer}
+    .phrase-toggle:hover{background:#f4f7fa}
+    .phrase-toggle .phrase-symbol{font-size:1.05rem;line-height:1}
+    .phrase-line{margin:0;padding:.65rem .75rem;border:1px solid #dbe2e9;border-top:0;border-left:.28rem solid var(--blue);border-radius:0 0 .38rem .38rem;background:#fff;color:#2f3d4c;line-height:1.5}
+    .phrase-line.hidden{display:none}
     .phrase-line em{display:inline}
     .source-note{margin:.65rem 0 0;padding:.65rem .75rem;background:#eef2f6;border-left:.3rem solid var(--navy);color:var(--ink);line-height:1.48}
     .source-note strong{color:var(--navy)}
@@ -62,8 +65,10 @@
                 <h2>Opening · Connect with your audience</h2>
                 <p>Address your listeners and connect your contribution directly to the communicative situation. Introduce the focus without writing an essay-style introduction.</p>
                 <div class="source-note"><strong>Referring to the source:</strong> If it helps your audience, mention the German source naturally. You do not need a TATTT sentence or line references.</div>
-                <div class="phrase-line">
-                  <strong>Useful phrases</strong>
+                <button class="phrase-toggle" type="button" aria-expanded="false" aria-controls="opening-phrases">
+                  <span>Useful phrases</span><span class="phrase-symbol" aria-hidden="true">+</span>
+                </button>
+                <div class="phrase-line hidden" id="opening-phrases">
                   <em>Good morning everyone.</em> ·
                   <em>As part of today’s discussion on ..., I would like to focus on ...</em> ·
                   <em>To give you an idea of the situation in Germany, I would like to draw on a German article about ...</em> ·
@@ -78,8 +83,10 @@
                 <h2>Main Part · Convey the relevant information</h2>
                 <p>Select and reorganise the information needed for the task. Group related ideas, explain unfamiliar cultural references where necessary and make the progression easy to follow for a listener.</p>
                 <div class="source-note"><strong>Keep source and own voice apart:</strong> Report the source accurately and objectively. Do not add your own knowledge or opinion unless the task explicitly asks you to do so.</div>
-                <div class="phrase-line">
-                  <strong>Useful phrases</strong>
+                <button class="phrase-toggle" type="button" aria-expanded="false" aria-controls="main-phrases">
+                  <span>Useful phrases</span><span class="phrase-symbol" aria-hidden="true">+</span>
+                </button>
+                <div class="phrase-line hidden" id="main-phrases">
                   <em>First of all, ...</em> ·
                   <em>Another important aspect is ...</em> ·
                   <em>The article also points out that ...</em> ·
@@ -96,8 +103,10 @@
                 <h2>Closing your contribution · Round off the situation</h2>
                 <p>Bring your contribution to a natural and memorable close. Highlight the key takeaway, return to the discussion or thank your listeners. Do not add a new argument or suddenly introduce a personal judgement.</p>
                 <div class="source-note"><strong>This is not an essay conclusion:</strong> The ending should fit the speaking situation rather than mechanically weighing up arguments.</div>
-                <div class="phrase-line">
-                  <strong>Useful phrases</strong>
+                <button class="phrase-toggle" type="button" aria-expanded="false" aria-controls="closing-phrases">
+                  <span>Useful phrases</span><span class="phrase-symbol" aria-hidden="true">+</span>
+                </button>
+                <div class="phrase-line hidden" id="closing-phrases">
                   <em>What this shows is that ...</em> ·
                   <em>The key point to take away is that ...</em> ·
                   <em>So when we discuss ..., we should keep in mind that ...</em> ·
@@ -114,6 +123,16 @@
   </main>
 
   <script>
+    document.querySelectorAll('.phrase-toggle').forEach((button) => {
+      button.addEventListener('click', () => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        button.querySelector('.phrase-symbol').textContent = isOpen ? '+' : '−';
+        panel.classList.toggle('hidden', isOpen);
+      });
+    });
+
     document.querySelectorAll('.reveal-button').forEach((button) => {
       button.addEventListener('click', () => {
         const panel = document.getElementById(button.getAttribute('aria-controls'));
