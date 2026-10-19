@@ -119,7 +119,7 @@
       try {
         const files = ['part0.txt','part1.txt','part2a.txt','part2b.txt','part3.txt','part4.txt','part5.txt'];
         const parts = await Promise.all(files.map((name) =>
-          fetch('.img/' + name + '?v=1').then((response) => {
+          fetch('image-data/' + name + '?v=2').then((response) => {
             if (!response.ok) throw new Error('Could not load image data.');
             return response.text();
           })
